@@ -2,22 +2,24 @@ FROM julia:1.9.1
 LABEL author="A. Mhamdi <a_mhamdi@outlook.com>"
 
 # Expose ports
-EXPOSE 1357 2468
+EXPOSE 1234 2468
+
 # Set ENV variables
 ENV USERNAME mhamdi 
 ENV USER_HOME_DIR /home/${USERNAME}
 ENV JULIA_DEPOT_PATH ${USER_HOME_DIR}/.julia
 ENV JL ${JULIA_DEPOT_PATH}/conda/3/bin/jupyter\ lab
 ENV WORKING_DIR ${USER_HOME_DIR}/work
+
 # Add user and set ownership
 RUN useradd -ms /bin/bash  -p $(echo ${USERNAME} | openssl passwd -1 -stdin) ${USERNAME}
+
 # Change user & working directory
 USER ${USERNAME}
 WORKDIR ${WORKING_DIR}
 
 # Copy TOML files (deps, ver, pkg, UUID)
 COPY ./Codes/Project.toml ./
-# COPY ./Codes/Manifest.toml ./
 
 # Activate environment and add IJulia kernel, Pluto and JupyterLab IDE
 RUN julia -e 'import Pkg; Pkg.activate("."); Pkg.instantiate(); Pkg.precompile()'
