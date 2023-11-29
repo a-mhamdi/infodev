@@ -9,7 +9,7 @@
 [![MLPY CI](https://github.com/a-mhamdi/infodev/actions/workflows/docker-image.yml/badge.svg)](https://github.com/a-mhamdi/infodev/actions/workflows/docker-image.yml)
 [![Docker Version](https://img.shields.io/docker/v/abmhamdi/infodev?sort=semver)](https://hub.docker.com/r/abmhamdi/infodev)
 
-This repository contains slides, labs, and code samples for using `Julia` to implement some general-purpose algorithms. 
+This repository contains code samples for using `Julia` to implement some general-purpose algorithms. 
 
 ### Prerequisites
 
