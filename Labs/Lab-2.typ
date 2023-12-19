@@ -40,41 +40,27 @@
 
   )
   // index-terms: (""),
-  // bibliography-file: "refs.bib",
+  // bibliography-file: "Biblio.bib",
 )
 
 = Exercises
 #lorem(50)
 
+/* TEMPLATE 
 #exo[Title][Content.]
 
-#solution[
 ```julia
 # WRITE YOUR CODE HERE
 ```
-]
+
+#test[Some test]
+*/
 
 #exo[Title][Content.]
 
-#solution[
 ```julia
 # WRITE YOUR CODE HERE
 ```
-]
 
-#exo[Title][Content.]
-
-#solution[
-```julia
-# WRITE YOUR CODE HERE
-```
-]
-
-#exo[Title][Content.]
-
-#solution[
-```julia
-# WRITE YOUR CODE HERE
-```
-]
+#test[Some test]
 

@@ -68,6 +68,20 @@
     }
   }
 
+  // Configure floats
+  show figure.where(
+   kind: table
+  ): set figure.caption(position: top)
+
+  // RAW TEME
+  set raw(theme: "themes/halcyon.tmTheme")
+  show raw: it => block(
+ 	fill: rgb("#1d2433"),
+  	inset: 8pt,
+  	radius: 5pt,
+  	text(fill: rgb("#a2aabc"), it)
+  )
+
   // Configure lists.
   set enum(indent: 10pt, body-indent: 9pt)
   set list(indent: 10pt, body-indent: 9pt)
@@ -142,7 +156,7 @@
           \ #emph(author.organization)
         ]
         if "email" in author [
-          \ #link("mailto:" + author.email)
+          \ #link("mailto:" + author.email)[#emph(author.email)]
         ]
         if "profile" in author [ 
           \ #link("https://www.github.com/" + author.profile)[#octique-inline("mark-github") #emph(author.profile)]
@@ -169,12 +183,12 @@
     #h(1em) _Abstract_ --- #abstract
 
     #if index-terms != () [
-      #h(1em)_Index terms_---#index-terms.join(", ")
+      #h(1em)_Index terms_ --- #index-terms.join(", ")
     ]
     #v(2pt)
   ]
 
-  // Display the paper's contents.
+  // Display the paper s contents.
   body
 
 
@@ -186,7 +200,7 @@
 
 }
 
-
+// EXO
 #set page(height: 100pt)
 #let c = counter("exo")
 #let exo(tlt, txt) = block[
@@ -195,7 +209,31 @@
   #rect(fill: luma(221))[#txt]
 ]
 
+// SOLUTION
 #let solution(sol) = block[
   #rect(fill: olive)[#sol]
 ]
 
+// PERSONALIZE FIGURE
+/*
+#let fig(imgLoc, imgCap) = figure(
+  image(#str(<imgLoc>), width: 100%),
+  caption: [#imgCap],
+)
+*/
+//#fig["<< IMAGE_NAME.EXT >>"][<< CAPTION >>]
+
+// TEST SCENARIO
+#let test(tst) = [
+#box(
+	height: 25pt,
+	image("images/attention.png", width: 10%)
+)
+#tst
+]
+
+// REMINDER
+#let reminder = align(center + bottom)[
+	#image("images/reminder.png")
+	#rect[*#text(smallcaps("In each document, you have to insert well annotated screenshots of your code after being executed."))*]
+	]
