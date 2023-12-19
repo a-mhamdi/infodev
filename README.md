@@ -11,7 +11,7 @@
 
 This repository contains code samples for using `Julia` to implement some general-purpose algorithms. 
 
-### Prerequisites
+## Prerequisites
 
 Codes run on top of a `Docker` image, ensuring a consistent and reproducible environment. 
 
@@ -24,3 +24,10 @@ docker pull abmhamdi/infodev
 ```
 
 This may take a while, as it will download and install all necessary dependencies.
+
+## How to control the containers:
+
+* ```docker-compose up -d``` starts the container in detached mode
+* ```docker-compose down``` stops and destroys the container
+
+Services can be run by typing the command `docker-compose up`. This will start the `Jupyter Lab` on [http://localhost:2468](http://localhost:2468) and you should be able to use `Julia` from within the notebook by starting a new `Julia` notebook. You can parallelly start `Pluto` on [http://localhost:1234](http://localhost:1234).
