@@ -1,6 +1,9 @@
 FROM julia:latest
 LABEL author="A. Mhamdi <a_mhamdi@outlook.com>"
 
+RUN apt-get update
+RUN apt-get install -y libva-mesa-driver
+
 # Expose ports
 EXPOSE 1234 2468
 
