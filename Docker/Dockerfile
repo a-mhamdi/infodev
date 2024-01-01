@@ -1,4 +1,4 @@
-FROM julia:1.9.1
+FROM julia:latest
 LABEL author="A. Mhamdi <a_mhamdi@outlook.com>"
 
 # Expose ports
