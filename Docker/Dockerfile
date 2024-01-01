@@ -2,7 +2,7 @@ FROM julia:latest
 LABEL author="A. Mhamdi <a_mhamdi@outlook.com>"
 
 RUN apt-get update
-RUN apt-get install -y libva-mesa-driver
+RUN apt-get install -y mesa-common-dev
 
 # Expose ports
 EXPOSE 1234 2468
