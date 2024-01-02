@@ -1,3 +1,9 @@
+using JSServe
+JSServe.configure_server!(listen_url="localhost", forwarded_port=9630)
+Page()
+
+using Makie: Slider
+
 using WGLMakie # Web-based backend
 # http://localhost:9384/browser-display
 
