@@ -1,4 +1,5 @@
-using GLMakie, Makie
+using WGLMakie # Web-based backend
+# http://localhost:9384/browser-display
 
 # Create a figure window
 set_theme!(theme_dark()) 

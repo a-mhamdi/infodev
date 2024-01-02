@@ -1,11 +1,8 @@
 FROM julia:latest
 LABEL author="A. Mhamdi <a_mhamdi@outlook.com>"
 
-RUN apt-get update
-RUN apt-get install -y mesa-common-dev
-
 # Expose ports
-EXPOSE 1234 2468
+EXPOSE 1234 2468 9384
 
 # Set ENV variables
 ENV USERNAME mhamdi 
