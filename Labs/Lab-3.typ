@@ -55,8 +55,8 @@ In this lab, you will create a basic web application using *Genie* framework in 
 #let code=read("../Codes/web-app/app.jl.html")
 #raw(code, lang: "html")
 
-```bash
-$> julia --project
+```zsh
+julia --project
 ```
 
 ```julia
