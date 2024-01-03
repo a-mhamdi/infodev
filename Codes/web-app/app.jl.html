@@ -1,0 +1,36 @@
+<header class="st-header q-pa-sm">
+    <h1 class="st-header__title text-h3" Sinewave Dashboard </h1>
+</header>
+
+<div class="row">
+    <div class="st-col col-12 col-sm st-module">
+        <p><b># Samples</b></p>
+        <q-slider v-model="N" 
+		:min="10" :max="1000" 
+		:step="10" :label="true"> 
+	</q-slider> 
+    </div>
+
+    <div class="st-col col-12 col-sm st-module">
+        <p><b>Amplitude</b></p>
+        <q-slider v-model="amp" 
+		:min="0" :max="3" 
+		:step=".5" :label="true"> 
+	</q-slider> 
+    </div>
+
+    <div class="st-col col-12 col-sm st-module">
+        <p><b>Frequency</b></p>
+	<q-slider v-model="freq" 
+		:min="0" :max="10" 
+		:step="1" :label="true"> 
+	</q-slider>
+    </div>
+</div>
+
+<div class="row">
+    <div class="st-col col-12 col-sm st-module">
+	<p><b>Sinewave</b></p>
+        <plotly :data="my_sine"> </plotly>
+    </div>
+<div>

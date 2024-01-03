@@ -1,0 +1,20 @@
+┌ Info: 2024-01-03 13:18:33 Watching ["/home/mhamdi/MEGA/git-repos/infodev/Codes/web-app"]
+└ @ GenieAutoReload /home/mhamdi/.julia/packages/GenieAutoReload/c8XpJ/src/GenieAutoReload.jl:19
+┌ Info: 2024-01-03 13:18:45 
+│ Web Server starting at http://127.0.0.1:8000 
+└ @ Genie.Server /home/mhamdi/.julia/packages/Genie/X0ACI/src/Server.jl:166
+┌ Info: 2024-01-03 13:18:45 Listening on: 127.0.0.1:8000, thread id: 1
+└ @ HTTP.Servers /home/mhamdi/.julia/packages/HTTP/bDoga/src/Servers.jl:367
+┌ Info: 2024-01-03 13:23:31 Watching ["/home/mhamdi/MEGA/git-repos/infodev/Codes/web-app"]
+└ @ GenieAutoReload /home/mhamdi/.julia/packages/GenieAutoReload/c8XpJ/src/GenieAutoReload.jl:19
+┌ Info: 2024-01-03 13:23:33 
+│ Web Server starting at http://127.0.0.1:8000 
+└ @ Genie.Server /home/mhamdi/.julia/packages/Genie/X0ACI/src/Server.jl:166
+┌ Info: 2024-01-03 13:23:38 Listening on: 127.0.0.1:8000, thread id: 1
+└ @ HTTP.Servers /home/mhamdi/.julia/packages/HTTP/bDoga/src/Servers.jl:367
+┌ Info: 2024-01-03 13:25:58 Autoreloading
+└ @ GenieAutoReload /home/mhamdi/.julia/packages/GenieAutoReload/c8XpJ/src/GenieAutoReload.jl:22
+┌ Info: 2024-01-03 13:28:02 Autoreloading
+└ @ GenieAutoReload /home/mhamdi/.julia/packages/GenieAutoReload/c8XpJ/src/GenieAutoReload.jl:22
+┌ Info: 2024-01-03 13:45:21 running `/home/mhamdi/.local/bin/jupyter notebook`
+└ @ IJulia /home/mhamdi/.julia/packages/IJulia/Vo51o/src/jupyter.jl:48
