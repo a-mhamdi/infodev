@@ -252,3 +252,13 @@
 	#image("Images/reminder.png")
 	#rect[*#text(smallcaps("In each document, you have to insert well annotated screenshots of your code after being executed."))*]
 	]
+	
+/* TEMPLATE 
+#exo[Title][Content.]
+
+```julia
+# WRITE YOUR CODE HERE
+```
+
+#test[Some test]
+*/
