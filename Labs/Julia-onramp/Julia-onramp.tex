@@ -1,0 +1,2800 @@
+% !TEX TS-program = xelatex
+\documentclass[11pt]{article}
+
+    \usepackage[breakable]{tcolorbox}
+    \usepackage{parskip} % Stop auto-indenting (to mimic markdown behaviour)
+    \usepackage{libertine}
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % Maintain compatibility with old templates. Remove in nbconvert 6.0
+    \let\Oldincludegraphics\includegraphics
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionFormat{nocaption}{}
+    \captionsetup{format=nocaption,aboveskip=0pt,belowskip=0pt}
+
+    \usepackage{float}
+    \floatplacement{figure}{H} % forces figures to be placed at the correct location
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+
+    \usepackage{iftex}
+    \ifPDFTeX
+        \usepackage[T1]{fontenc}
+        \IfFileExists{alphabeta.sty}{
+              \usepackage{alphabeta}
+          }{
+              \usepackage[mathletters]{ucs}
+              \usepackage[utf8x]{inputenc}
+          }
+    \else
+        \usepackage{fontspec}
+        \usepackage{unicode-math}
+    \fi
+
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics
+                         % to support a larger range
+    \makeatletter % fix for old versions of grffile with XeLaTeX
+    \@ifpackagelater{grffile}{2019/11/01}
+    {
+      % Do nothing on new versions
+    }
+    {
+      \def\Gread@@xetex#1{%
+        \IfFileExists{"\Gin@base".bb}%
+        {\Gread@eps{\Gin@base.bb}}%
+        {\Gread@@xetex@aux#1}%
+      }
+    }
+    \makeatother
+    \usepackage[Export]{adjustbox} % Used to constrain images to a maximum size
+    \adjustboxset{max size={0.9\linewidth}{0.9\paperheight}}
+
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    % The default LaTeX title has an obnoxious amount of whitespace. By default,
+    % titling removes some of it. It also provides customization options.
+    \usepackage{titling}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage{array}     % table support for pandoc >= 2.11.3
+    \usepackage{calc}      % table minipage width calculation for pandoc >= 2.11.1
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    \usepackage{mathrsfs}
+    
+
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+    \definecolor{ansi-default-inverse-fg}{HTML}{FFFFFF}
+    \definecolor{ansi-default-inverse-bg}{HTML}{000000}
+
+    % common color for the border for error outputs.
+    \definecolor{outerrorbackground}{HTML}{FFDFDF}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+
+
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatibility definitions
+    \def\gt{>}
+    \def\lt{<}
+    \let\Oldtex\TeX
+    \let\Oldlatex\LaTeX
+    \renewcommand{\TeX}{\textrm{\Oldtex}}
+    \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
+    % Document parameters
+    % Document title
+    \title{Julia Onramp}
+    
+    \author{A. Mhamdi}
+    
+    
+    
+% Pygments definitions
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\@namedef{PY@tok@w}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\@namedef{PY@tok@c}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cp}{\def\PY@tc##1{\textcolor[rgb]{0.61,0.40,0.00}{##1}}}
+\@namedef{PY@tok@k}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kp}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kt}{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\@namedef{PY@tok@o}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@ow}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\@namedef{PY@tok@nb}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@nf}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@nc}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@nn}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@ne}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.80,0.25,0.22}{##1}}}
+\@namedef{PY@tok@nv}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@no}{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\@namedef{PY@tok@nl}{\def\PY@tc##1{\textcolor[rgb]{0.46,0.46,0.00}{##1}}}
+\@namedef{PY@tok@ni}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.44,0.44,0.44}{##1}}}
+\@namedef{PY@tok@na}{\def\PY@tc##1{\textcolor[rgb]{0.41,0.47,0.13}{##1}}}
+\@namedef{PY@tok@nt}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@nd}{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\@namedef{PY@tok@s}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sd}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@si}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.64,0.35,0.47}{##1}}}
+\@namedef{PY@tok@se}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.36,0.12}{##1}}}
+\@namedef{PY@tok@sr}{\def\PY@tc##1{\textcolor[rgb]{0.64,0.35,0.47}{##1}}}
+\@namedef{PY@tok@ss}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@sx}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@m}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@gh}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\@namedef{PY@tok@gu}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\@namedef{PY@tok@gd}{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\@namedef{PY@tok@gi}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.52,0.00}{##1}}}
+\@namedef{PY@tok@gr}{\def\PY@tc##1{\textcolor[rgb]{0.89,0.00,0.00}{##1}}}
+\@namedef{PY@tok@ge}{\let\PY@it=\textit}
+\@namedef{PY@tok@gs}{\let\PY@bf=\textbf}
+\@namedef{PY@tok@gp}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\@namedef{PY@tok@go}{\def\PY@tc##1{\textcolor[rgb]{0.44,0.44,0.44}{##1}}}
+\@namedef{PY@tok@gt}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\@namedef{PY@tok@err}{\def\PY@bc##1{{\setlength{\fboxsep}{\string -\fboxrule}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}}
+\@namedef{PY@tok@kc}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kd}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kn}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kr}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@bp}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@fm}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@vc}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@vg}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@vi}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@vm}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@sa}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sb}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sc}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@dl}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@s2}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sh}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@s1}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@mb}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mf}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mh}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mi}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@il}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mo}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@ch}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cm}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cpf}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@c1}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cs}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % For linebreaks inside Verbatim environment from package fancyvrb.
+    \makeatletter
+        \newbox\Wrappedcontinuationbox
+        \newbox\Wrappedvisiblespacebox
+        \newcommand*\Wrappedvisiblespace {\textcolor{red}{\textvisiblespace}}
+        \newcommand*\Wrappedcontinuationsymbol {\textcolor{red}{\llap{\tiny$\m@th\hookrightarrow$}}}
+        \newcommand*\Wrappedcontinuationindent {3ex }
+        \newcommand*\Wrappedafterbreak {\kern\Wrappedcontinuationindent\copy\Wrappedcontinuationbox}
+        % Take advantage of the already applied Pygments mark-up to insert
+        % potential linebreaks for TeX processing.
+        %        {, <, #, %, $, ' and ": go to next line.
+        %        _, }, ^, &, >, - and ~: stay at end of broken line.
+        % Use of \textquotesingle for straight quote.
+        \newcommand*\Wrappedbreaksatspecials {%
+            \def\PYGZus{\discretionary{\char`\_}{\Wrappedafterbreak}{\char`\_}}%
+            \def\PYGZob{\discretionary{}{\Wrappedafterbreak\char`\{}{\char`\{}}%
+            \def\PYGZcb{\discretionary{\char`\}}{\Wrappedafterbreak}{\char`\}}}%
+            \def\PYGZca{\discretionary{\char`\^}{\Wrappedafterbreak}{\char`\^}}%
+            \def\PYGZam{\discretionary{\char`\&}{\Wrappedafterbreak}{\char`\&}}%
+            \def\PYGZlt{\discretionary{}{\Wrappedafterbreak\char`\<}{\char`\<}}%
+            \def\PYGZgt{\discretionary{\char`\>}{\Wrappedafterbreak}{\char`\>}}%
+            \def\PYGZsh{\discretionary{}{\Wrappedafterbreak\char`\#}{\char`\#}}%
+            \def\PYGZpc{\discretionary{}{\Wrappedafterbreak\char`\%}{\char`\%}}%
+            \def\PYGZdl{\discretionary{}{\Wrappedafterbreak\char`\$}{\char`\$}}%
+            \def\PYGZhy{\discretionary{\char`\-}{\Wrappedafterbreak}{\char`\-}}%
+            \def\PYGZsq{\discretionary{}{\Wrappedafterbreak\textquotesingle}{\textquotesingle}}%
+            \def\PYGZdq{\discretionary{}{\Wrappedafterbreak\char`\"}{\char`\"}}%
+            \def\PYGZti{\discretionary{\char`\~}{\Wrappedafterbreak}{\char`\~}}%
+        }
+        % Some characters . , ; ? ! / are not pygmentized.
+        % This macro makes them "active" and they will insert potential linebreaks
+        \newcommand*\Wrappedbreaksatpunct {%
+            \lccode`\~`\.\lowercase{\def~}{\discretionary{\hbox{\char`\.}}{\Wrappedafterbreak}{\hbox{\char`\.}}}%
+            \lccode`\~`\,\lowercase{\def~}{\discretionary{\hbox{\char`\,}}{\Wrappedafterbreak}{\hbox{\char`\,}}}%
+            \lccode`\~`\;\lowercase{\def~}{\discretionary{\hbox{\char`\;}}{\Wrappedafterbreak}{\hbox{\char`\;}}}%
+            \lccode`\~`\:\lowercase{\def~}{\discretionary{\hbox{\char`\:}}{\Wrappedafterbreak}{\hbox{\char`\:}}}%
+            \lccode`\~`\?\lowercase{\def~}{\discretionary{\hbox{\char`\?}}{\Wrappedafterbreak}{\hbox{\char`\?}}}%
+            \lccode`\~`\!\lowercase{\def~}{\discretionary{\hbox{\char`\!}}{\Wrappedafterbreak}{\hbox{\char`\!}}}%
+            \lccode`\~`\/\lowercase{\def~}{\discretionary{\hbox{\char`\/}}{\Wrappedafterbreak}{\hbox{\char`\/}}}%
+            \catcode`\.\active
+            \catcode`\,\active
+            \catcode`\;\active
+            \catcode`\:\active
+            \catcode`\?\active
+            \catcode`\!\active
+            \catcode`\/\active
+            \lccode`\~`\~
+        }
+    \makeatother
+
+    \let\OriginalVerbatim=\Verbatim
+    \makeatletter
+    \renewcommand{\Verbatim}[1][1]{%
+        %\parskip\z@skip
+        \sbox\Wrappedcontinuationbox {\Wrappedcontinuationsymbol}%
+        \sbox\Wrappedvisiblespacebox {\FV@SetupFont\Wrappedvisiblespace}%
+        \def\FancyVerbFormatLine ##1{\hsize\linewidth
+            \vtop{\raggedright\hyphenpenalty\z@\exhyphenpenalty\z@
+                \doublehyphendemerits\z@\finalhyphendemerits\z@
+                \strut ##1\strut}%
+        }%
+        % If the linebreak is at a space, the latter will be displayed as visible
+        % space at end of first line, and a continuation symbol starts next line.
+        % Stretch/shrink are however usually zero for typewriter font.
+        \def\FV@Space {%
+            \nobreak\hskip\z@ plus\fontdimen3\font minus\fontdimen4\font
+            \discretionary{\copy\Wrappedvisiblespacebox}{\Wrappedafterbreak}
+            {\kern\fontdimen2\font}%
+        }%
+
+        % Allow breaks at special characters using \PYG... macros.
+        \Wrappedbreaksatspecials
+        % Breaks at punctuation characters . , ; ? ! and / need catcode=\active
+        \OriginalVerbatim[#1,codes*=\Wrappedbreaksatpunct]%
+    }
+    \makeatother
+
+    % Exact colors from NB
+    \definecolor{incolor}{HTML}{303F9F}
+    \definecolor{outcolor}{HTML}{D84315}
+    \definecolor{cellborder}{HTML}{CFCFCF}
+    \definecolor{cellbackground}{HTML}{F7F7F7}
+
+    % prompt
+    \makeatletter
+    \newcommand{\boxspacing}{\kern\kvtcb@left@rule\kern\kvtcb@boxsep}
+    \makeatother
+    \newcommand{\prompt}[4]{
+        {\ttfamily\llap{{\color{#2}[#3]:\hspace{3pt}#4}}\vspace{-\baselineskip}}
+    }
+    
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+\begin{document}
+    
+    \maketitle
+    
+    
+
+  
+
+    \hypertarget{goals}{%
+\section{GOALS}\label{goals}}
+
+\begin{itemize}
+\tightlist
+\item
+  Enter commands in \({\tt Julia}\) REPL to create variables and perform
+  calculations;
+\item
+  Write and save programs;
+\item
+  Use indexing to extract and modify rows, columns, and elements of
+  \({\tt Julia}\) tensors.
+\end{itemize}
+
+    \({\tt Julia}\) is a standalone program which can be downloaded from
+\url{https://julialang.org/downloads/}
+
+    \textbf{Getting around}
+
+    By default, Julia runs in an interactive terminal called the REPL. In
+this mode, Some useful commands are: 1. \texttt{\^{}C} aborts execution
+1. \texttt{\^{}D} exits Julia 1. \texttt{?} enters help mode 1.
+\texttt{;} enters system shell mode 1. \texttt{{]}} enters package
+manager mode 1. \texttt{\^{}l} clears screen
+
+    We begin first by activating the environement within the desired folder.
+
+    From the REPL interface, either type
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{using}\NormalTok{ Pkg  }
+\NormalTok{pkg}\StringTok{"activate ."}
+\end{Highlighting}
+\end{Shaded}
+
+or access the package mode by typing \texttt{{]}} and simply write
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{activate .}
+\end{Highlighting}
+\end{Shaded}
+
+Always within the package mode, to see the full list of installed
+packages
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{st}
+\end{Highlighting}
+\end{Shaded}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{1}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{using}\PY{+w}{ }\PY{n}{Pkg}
+\PY{l+s+sa}{pkg}\PY{l+s}{\PYZdq{}}\PY{l+s}{activate .}\PY{l+s}{\PYZdq{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{ansi-green-intense}{\textbf{  Activating}} project at `\textasciitilde{}/MEGA/git-repos/infodev/Codes`
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{2}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{p}{]}\PY{n}{st}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{ansi-green-intense}{\textbf{Status}} `\textasciitilde{}/MEGA/git-repos/infodev/Codes/Project.toml`
+  \textcolor{ansi-black-intense}{[336ed68f] }CSV v0.10.11
+  \textcolor{ansi-black-intense}{[a93c6f00] }DataFrames v1.6.1
+  \textcolor{ansi-black-intense}{[7073ff75] }IJulia v1.24.2
+\textcolor{ansi-green}{⌃} \textcolor{ansi-black-intense}{[ee78f7c6] }Makie v0.19.12
+  \textcolor{ansi-black-intense}{[5deeb4b9] }Mousetrap v0.3.1
+`https://github.com/clemapfel/mousetrap.jl\#main`
+  \textcolor{ansi-black-intense}{[5fb14364] }OhMyREPL v0.5.23
+  \textcolor{ansi-black-intense}{[91a5bcdd] }Plots v1.39.0
+  \textcolor{ansi-black-intense}{[c3e4b0f8] }Pluto v0.19.32
+  \textcolor{ansi-black-intense}{[d6f4376e] }Markdown
+\textcolor{ansi-cyan-intense}{\textbf{Info}} Packages marked with \textcolor{ansi-green}{⌃} have new versions
+available and may be upgradable.
+    \end{Verbatim}
+
+    To add the \textbf{Markdown} package for instance, we write
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{3}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{p}{]}\PY{n}{add}\PY{+w}{ }\PY{n}{Markdown}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{ansi-green-intense}{\textbf{   Resolving}} package versions{\ldots}
+\textcolor{ansi-green-intense}{\textbf{  No Changes}} to `\textasciitilde{}/MEGA/git-repos/infodev/Codes/Project.toml`
+\textcolor{ansi-green-intense}{\textbf{  No Changes}} to `\textasciitilde{}/MEGA/git-
+repos/infodev/Codes/Manifest.toml`
+    \end{Verbatim}
+
+    To be able to use it, we do as follows
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{4}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{using}\PY{+w}{ }\PY{n}{Markdown}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{5}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{l+s+sa}{md}\PY{l+s}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\PY{l+s}{This a text inside a code cell, thanks to **Markdown** package. I can \PYZus{}emphasize\PYZus{} anything. Make other things **bold**}
+\PY{l+s}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{5}{}
+    
+    This a text inside a code cell, thanks to \textbf{Markdown} package. I can \emph{emphasize} anything. Make other things \textbf{bold}
+
+
+
+    
+
+    Runnig \texttt{Julia} in Jupyer Notebookor Jupyter Lab is pretty handy.
+We only need to install the appropriate kernel. In order to add
+\texttt{Julia} kernel \texttt{IJulia} to Jupyter Notebook and/or
+\texttt{JupyterLab} IDEs, we begin by executing the following commands:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{using}\NormalTok{ Pkg  }
+\NormalTok{Pkg.add(}\StringTok{"IJulia"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+If we want to get \texttt{JupyterLab} instance running in current
+directory, we can do:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{jupyterlab(dir}\OperatorTok{=}\NormalTok{pwd()}\OperatorTok{,}\NormalTok{ detached}\OperatorTok{=}\ExtensionTok{true}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+    In case things do not work, we run the two following commands from
+\({\tt Julia}\) REPL which launch jupyter environment.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{using}\NormalTok{ IJulia  }
+\NormalTok{installkernel(}\StringTok{"Julia"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+    The shell mode is also available through the REPL to evaluate some os
+commands. To do so, simply preface the regular command by semicolon. For
+instance, \texttt{pwd} prints the path to working directory and
+\texttt{ls} allows to list the content of the current directory.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{6}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{p}{;}\PY{n}{pwd}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+/home/mhamdi/MEGA/git-repos/infodev/Codes
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{7}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{p}{;}\PY{n}{ls}\PY{+w}{ }\PY{o}{\PYZhy{}}\PY{n}{la}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+total 752
+drwxrwxr-x 3 mhamdi mhamdi   4096 Nov 29 21:29 .
+drwxrwxr-x 6 mhamdi mhamdi   4096 Nov 19 16:27 ..
+drwxrwxr-x 2 mhamdi mhamdi   4096 Nov 29 21:09 .ipynb\_checkpoints
+-rw------- 3 mhamdi mhamdi 617224 Nov 29 21:29 julia-onramp.ipynb
+-rw------- 1 mhamdi mhamdi  34286 Jan 14  2023 Julia.png
+-rw-rw-r-- 1 mhamdi mhamdi  83778 Nov 29 21:13 Manifest.toml
+-rw-rw-r-- 1 mhamdi mhamdi    444 Nov 29 21:13 Project.toml
+-rw-rw-r-- 1 mhamdi mhamdi     20 Nov 19 16:27 README.md
+-rw-rw-r-- 1 mhamdi mhamdi     66 Nov 29 21:28 test-file.csv
+-rw------- 1 mhamdi mhamdi     18 Nov 29 21:17 .wakatime-project
+    \end{Verbatim}
+
+    \hypertarget{getting-help}{%
+\section{Getting Help}\label{getting-help}}
+
+In order to seek help on a particular function. We just use the
+\texttt{?} mark. We can use the \({\tt Julia}\) documentation to
+discover more pieces of information about \({\tt Julia}\) features.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{8}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{?}\PY{n}{cos}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+search: \textbf{c}\textbf{o}\textbf{s}
+\textbf{c}\textbf{o}\textbf{s}h
+\textbf{c}\textbf{o}\textbf{s}d
+\textbf{c}\textbf{o}\textbf{s}c
+\textbf{c}\textbf{o}\textbf{s}pi
+a\textbf{c}\textbf{o}\textbf{s}
+a\textbf{c}\textbf{o}\textbf{s}h
+a\textbf{c}\textbf{o}\textbf{s}d
+sin\textbf{c}\textbf{o}\textbf{s}
+sin\textbf{c}\textbf{o}\textbf{s}d
+sin\textbf{c}\textbf{o}\textbf{s}pi
+\textbf{c}\textbf{o}n\textbf{s}t
+
+    \end{Verbatim}
+ 
+            
+\prompt{Out}{outcolor}{8}{}
+    
+    \begin{verbatim}
+cos(x)
+\end{verbatim}
+Compute cosine of \texttt{x}, where \texttt{x} is in radians.
+
+See also \href{@ref}{\texttt{cosd}}, \href{@ref}{\texttt{cospi}}, \href{@ref}{\texttt{sincos}}, \href{@ref}{\texttt{cis}}.
+
+\rule{\textwidth}{1pt}
+\begin{verbatim}
+cos(A::AbstractMatrix)
+\end{verbatim}
+Compute the matrix cosine of a square matrix \texttt{A}.
+
+If \texttt{A} is symmetric or Hermitian, its eigendecomposition (\href{@ref}{\texttt{eigen}}) is used to compute the cosine. Otherwise, the cosine is determined by calling \href{@ref}{\texttt{exp}}.
+
+\section{Examples}
+\begin{verbatim}
+julia> cos(fill(1.0, (2,2)))
+2×2 Matrix{Float64}:
+  0.291927  -0.708073
+ -0.708073   0.291927
+\end{verbatim}
+
+
+    
+
+    To print something on the standard output, it is possible to use either
+\texttt{print} and \texttt{println}. The last one displays the text and
+moves the cursor to the next line.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{9}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Hello}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+\PY{n}{print}\PY{p}{(}\PY{l+s+sc}{\PYZsq{} \PYZsq{}}\PY{p}{)}
+\PY{n}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{World}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Hello World
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{10}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{println}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Hello}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+\PY{n}{println}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{World}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Hello
+World
+    \end{Verbatim}
+
+    \textbf{Data types: Dictionaries}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{11}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{dict}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{k+kt}{Dict}\PY{p}{(}
+\PY{+w}{    }\PY{c}{\PYZsh{} Name =\PYZgt{} \PYZsh{} of wheels}
+\PY{+w}{    }\PY{l+s}{\PYZdq{}}\PY{l+s}{Unicycle}\PY{l+s}{\PYZdq{}}\PY{+w}{ }\PY{o}{=\PYZgt{}}\PY{+w}{ }\PY{l+m+mi}{1}\PY{p}{,}
+\PY{+w}{    }\PY{l+s}{\PYZdq{}}\PY{l+s}{Bicycle}\PY{l+s}{\PYZdq{}}\PY{+w}{ }\PY{o}{=\PYZgt{}}\PY{+w}{ }\PY{l+m+mi}{2}\PY{p}{,}
+\PY{+w}{    }\PY{l+s}{\PYZdq{}}\PY{l+s}{Tricycle}\PY{l+s}{\PYZdq{}}\PY{+w}{ }\PY{o}{=\PYZgt{}}\PY{+w}{ }\PY{l+m+mi}{3}
+\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{11}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+Dict\{String, Int64\} with 3 entries:
+  "Bicycle"  => 2
+  "Tricycle" => 3
+  "Unicycle" => 1
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{12}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{typeof}\PY{p}{(}\PY{n}{dict}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{12}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+Dict\{String, Int64\}
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{13}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{dict}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{k+kt}{Dict}\PY{p}{(}\PY{p}{[}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Unicycle}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,}\PY{+w}{ }\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Bicycle}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\PY{+w}{ }\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Tricycle}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{13}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+Dict\{String, Int64\} with 3 entries:
+  "Bicycle"  => 2
+  "Tricycle" => 3
+  "Unicycle" => 1
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{14}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{dict}\PY{p}{[}\PY{l+s}{\PYZdq{}}\PY{l+s}{Bicycle}\PY{l+s}{\PYZdq{}}\PY{p}{]}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{14}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+2
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{15}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{lst}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{+w}{ }\PY{l+s+sc}{\PYZsq{}a\PYZsq{}}\PY{p}{,}\PY{+w}{ }\PY{l+s}{\PYZdq{}}\PY{l+s}{abc}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{+w}{ }\PY{n+nb}{true}\PY{p}{,}\PY{+w}{ }\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{+w}{ }\PY{l+m+mf}{.5}\PY{n+nb}{im}\PY{p}{]}\PY{p}{]}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{15}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+5-element Vector\{Any\}:
+    1
+     'a': ASCII/Unicode U+0061 (category Ll: Letter, lowercase)
+     "abc"
+ true
+     ComplexF64[0.0 + 0.0im, 0.0 + 0.5im]
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{16}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{typeof}\PY{p}{(}\PY{n}{lst}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{16}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+Vector\{Any\}\textcolor{ansi-black-intense}{ (alias for }\textcolor{ansi-black-intense}{Array\{Any, 1\}}\textcolor{ansi-black-intense}{)}
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{17}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{lst}\PY{p}{[}\PY{k}{end}\PY{p}{]}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{17}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+2-element Vector\{ComplexF64\}:
+ 0.0 + 0.0im
+ 0.0 + 0.5im
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \hypertarget{basic-calculations}{%
+\subsubsection{Basic Calculations}\label{basic-calculations}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{18}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{a}\PY{p}{,}\PY{+w}{ }\PY{n}{b}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{l+m+mi}{1}\PY{p}{,}\PY{+w}{ }\PY{l+m+mf}{1.5}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{18}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+(1, 1.5)
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{19}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{println}\PY{p}{(}\PY{n}{typeof}\PY{p}{(}\PY{n}{a}\PY{p}{)}\PY{p}{)}
+\PY{n}{println}\PY{p}{(}\PY{n}{typeof}\PY{p}{(}\PY{n}{b}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Int64
+Float64
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{20}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{l+s+sa}{md}\PY{l+s}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\PY{l+s}{`varinfo` method allows to display loaded variables.}
+\PY{l+s}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{20}{}
+    
+    \texttt{varinfo} method allows to display loaded variables.
+
+
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{21}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{varinfo}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{21}{}
+    
+    \begin{tabular}
+{l | r | l}
+name & size & summary \\
+\hline
+Base &  & Module \\
+Core &  & Module \\
+Main &  & Module \\
+PLOTS\_DEFAULTS & 456 bytes & Dict\{Symbol, Symbol\} with 1 entry \\
+a & 8 bytes & Int64 \\
+b & 8 bytes & Float64 \\
+dict & 503 bytes & Dict\{String, Int64\} with 3 entries \\
+lst & 176 bytes & 5-element Vector\{Any\} \\
+showall & 0 bytes & showall (generic function with 1 method) \\
+\end{tabular}
+
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{22}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{?}\PY{n}{varinfo}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+search: \textbf{v}\textbf{a}\textbf{r}\textbf{i}\textbf{n}[
+0m\textbf{f}\textbf{o}
+
+    \end{Verbatim}
+ 
+            
+\prompt{Out}{outcolor}{22}{}
+    
+    \begin{verbatim}
+varinfo(m::Module=Main, pattern::Regex=r""; all::Bool = false, imported::Bool = false, sortby::Symbol = :name, minsize::Int = 0)
+\end{verbatim}
+Return a markdown table giving information about exported global variables in a module, optionally restricted to those matching \texttt{pattern}.
+
+The memory consumption estimate is an approximate lower bound on the size of the internal structure of the object.
+
+\begin{itemize}
+\item \texttt{all} : also list non-exported objects defined in the module, deprecated objects, and compiler-generated objects.
+
+
+\item \texttt{imported} : also list objects explicitly imported from other modules.
+
+
+\item \texttt{recursive} : recursively include objects in sub-modules, observing the same settings in each.
+
+
+\item \texttt{sortby} : the column to sort results by. Options are \texttt{:name} (default), \texttt{:size}, and \texttt{:summary}.
+
+
+\item \texttt{minsize} : only includes objects with size at least \texttt{minsize} bytes. Defaults to \texttt{0}.
+
+\end{itemize}
+
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{23}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{println}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Sum of }\PY{l+s+si}{\PYZdl{}a}\PY{l+s}{ and }\PY{l+s+si}{\PYZdl{}b}\PY{l+s}{ is }\PY{l+s+si}{\PYZdl{}}\PY{p}{(}\PY{n}{a}\PY{o}{+}\PY{n}{b}\PY{p}{)}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Sum of 1 and 1.5 is 2.5
+    \end{Verbatim}
+
+    Addition, subtraction, multiplication, division, exponent
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{24}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{a}\PY{o}{+}\PY{n}{b}\PY{p}{,}\PY{+w}{ }\PY{n}{a}\PY{o}{\PYZhy{}}\PY{n}{b}\PY{p}{,}\PY{+w}{ }\PY{n}{a}\PY{o}{*}\PY{n}{b}\PY{p}{,}\PY{+w}{ }\PY{n}{a÷b}\PY{p}{,}\PY{+w}{ }\PY{n}{a}\PY{o}{\PYZca{}}\PY{n}{b}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{24}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+(2.5, -0.5, 1.5, 0.0, 1.0)
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{25}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{l+s+sa}{md}\PY{l+s}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\PY{l+s}{**Unicode support** }
+\PY{l+s}{1. We can use π instead of `pi`}
+\PY{l+s}{1. Greek letters improe comprehension: α \PYZus{}(alpha)\PYZus{}, β \PYZus{}(beta)\PYZus{}, ...}
+\PY{l+s}{1. Symbols: ≥ \PYZus{}(\PYZgt{}=)\PYZus{}, ≤ \PYZus{}(\PYZlt{}=)\PYZus{}, ∈ \PYZus{}(in)\PYZus{}, ... }
+\PY{l+s}{1. ...}
+\PY{l+s}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{25}{}
+    
+    \textbf{Unicode support} 
+
+\begin{itemize}
+\item[1. ] We can use π instead of \texttt{pi}
+
+
+\item[2. ] Greek letters improe comprehension: α \emph{(alpha)}, β \emph{(beta)}, ...
+
+
+\item[3. ] Symbols: ≥ \emph{(>=)}, ≤ \emph{(<=)}, ∈ \emph{(in)}, ... 
+
+
+\item[4. ] ...
+
+\end{itemize}
+
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{26}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{l+m+mi}{3}\PY{+w}{ }\PY{o}{≤}\PY{+w}{ }\PY{n+nb}{π}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{26}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+true
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{27}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{typeof}\PY{p}{(}\PY{l+m+mf}{3.14}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{27}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+Float64
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{28}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kt}{Float64}\PY{+w}{ }\PY{o}{|\PYZgt{}}\PY{+w}{ }\PY{n}{supertype}\PY{+w}{ }\PY{o}{|\PYZgt{}}\PY{+w}{ }\PY{n}{supertype}\PY{+w}{ }\PY{o}{|\PYZgt{}}\PY{+w}{ }\PY{n}{supertype}\PY{+w}{ }\PY{o}{|\PYZgt{}}\PY{+w}{ }\PY{n}{supertype}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{28}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+Any
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{29}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kt}{Integer}\PY{+w}{ }\PY{o}{|\PYZgt{}}\PY{+w}{ }\PY{n}{subtypes}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{29}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+3-element Vector\{Any\}:
+ Bool
+ Signed
+ Unsigned
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{30}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kt}{Signed}\PY{+w}{ }\PY{o}{|\PYZgt{}}\PY{+w}{ }\PY{n}{subtypes}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{30}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+6-element Vector\{Any\}:
+ BigInt
+ Int128
+ Int16
+ Int32
+ Int64
+ Int8
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{31}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kt}{UInt8}\PY{+w}{ }\PY{o}{\PYZlt{}:}\PY{+w}{ }\PY{k+kt}{Unsigned}\PY{+w}{ }\PY{c}{\PYZsh{} UInt8 is one subtype of Unsigned}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{31}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+true
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{32}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kt}{Signed}\PY{+w}{ }\PY{o}{\PYZgt{}:}\PY{+w}{ }\PY{k+kt}{Int8}\PY{+w}{ }\PY{c}{\PYZsh{} Signed is supertype of Int8}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{32}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+true
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{33}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{typeof}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{33}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+Int64
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{34}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{tmp}\PY{o}{::}\PY{k+kt}{UInt8}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{l+m+mi}{3}
+\PY{n}{typeof}\PY{p}{(}\PY{n}{tmp}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{34}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+UInt8
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \hypertarget{mathematical-notation}{%
+\subsubsection{Mathematical Notation}\label{mathematical-notation}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{35}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{println}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{l+m+mi}{2}\PY{p}{)}
+\PY{n}{println}\PY{p}{(}\PY{o}{+}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+3
+3
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{36}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{println}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{p}{)}
+\PY{n}{println}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+-1
+-1
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{37}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{println}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}
+\PY{n}{println}\PY{p}{(}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+2
+2
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{38}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{println}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}
+\PY{n}{println}\PY{p}{(}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+0.5
+0.5
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{39}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{println}\PY{p}{(}\PY{l+m+mi}{3}\PY{o}{/}\PY{l+m+mi}{4}\PY{o}{+}\PY{l+m+mi}{7}\PY{o}{/}\PY{l+m+mi}{5}\PY{p}{)}
+\PY{n}{println}\PY{p}{(}\PY{l+m+mi}{3}\PY{o}{//}\PY{l+m+mi}{4}\PY{o}{+}\PY{l+m+mi}{7}\PY{o}{//}\PY{l+m+mi}{5}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+2.15
+43//20
+    \end{Verbatim}
+
+    \hypertarget{array-transformations}{%
+\subsubsection{Array Transformations}\label{array-transformations}}
+
+Perform calculations on entire arrays at once.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{40}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{zeros}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{2}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{40}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+3×2 Matrix\{Float64\}:
+ 0.0  0.0
+ 0.0  0.0
+ 0.0  0.0
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{41}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{ones}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{3}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{2}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{41}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+3×3×2 Array\{Float64, 3\}:
+[:, :, 1] =
+ 1.0  1.0  1.0
+ 1.0  1.0  1.0
+ 1.0  1.0  1.0
+
+[:, :, 2] =
+ 1.0  1.0  1.0
+ 1.0  1.0  1.0
+ 1.0  1.0  1.0
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{42}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{fill}\PY{p}{(}\PY{n+nb}{π}\PY{p}{,}\PY{+w}{ }\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{42}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+2×2 Matrix\{Irrational\{:π\}\}:
+ π  π
+ π  π
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{43}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n+nb}{π}\PY{+w}{ }\PY{o}{.*}\PY{+w}{ }\PY{n}{ones}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{2}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{43}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+2×2 Matrix\{Float64\}:
+ 3.14159  3.14159
+ 3.14159  3.14159
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{44}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{l+s+sa}{md}\PY{l+s}{\PYZdq{}}\PY{l+s}{Creates a `BitArray` with all values set to `true`}\PY{l+s}{\PYZdq{}}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{44}{}
+    
+    Creates a \texttt{BitArray} with all values set to \texttt{true}
+
+
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{45}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{var}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{n}{trues}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{4}\PY{p}{)}
+\PY{n}{println}\PY{p}{(}\PY{n}{var}\PY{p}{)}
+\PY{n}{typeof}\PY{p}{(}\PY{n}{var}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Bool[1 1 1 1; 1 1 1 1]
+    \end{Verbatim}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{45}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+BitMatrix\textcolor{ansi-black-intense}{ (alias for }\textcolor{ansi-black-intense}{BitArray\{2\}}\textcolor{ansi-black-intense}{)}
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{46}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{l+s+sa}{md}\PY{l+s}{\PYZdq{}}\PY{l+s}{Creates a `BitArray` with all values set to `false`}\PY{l+s}{\PYZdq{}}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{46}{}
+    
+    Creates a \texttt{BitArray} with all values set to \texttt{false}
+
+
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{47}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{var}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{n}{falses}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{4}\PY{p}{)}
+\PY{n}{println}\PY{p}{(}\PY{n}{var}\PY{p}{)}
+\PY{n}{typeof}\PY{p}{(}\PY{n}{var}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Bool[0 0 0 0; 0 0 0 0]
+    \end{Verbatim}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{47}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+BitMatrix\textcolor{ansi-black-intense}{ (alias for }\textcolor{ansi-black-intense}{BitArray\{2\}}\textcolor{ansi-black-intense}{)}
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{48}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{l+s+sa}{md}\PY{l+s}{\PYZdq{}}\PY{l+s}{**Comprehension**}\PY{l+s}{\PYZdq{}}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{48}{}
+    
+    \textbf{Comprehension}
+
+
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{49}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{str}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{l+s}{\PYZdq{}}\PY{l+s}{Hello Julia}\PY{l+s}{\PYZdq{}}
+\PY{p}{[}\PY{n}{println}\PY{p}{(}\PY{n}{el}\PY{p}{)}\PY{+w}{ }\PY{k}{for}\PY{+w}{ }\PY{n}{el}\PY{+w}{ }\PY{k}{in}\PY{+w}{ }\PY{n}{str}\PY{p}{]}\PY{p}{;}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+H
+e
+l
+l
+o
+
+J
+u
+l
+i
+a
+    \end{Verbatim}
+
+    \hypertarget{calling-functions}{%
+\subsubsection{Calling Functions}\label{calling-functions}}
+
+Call functions to obtain multiple outputs.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{50}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{l+s+sa}{md}\PY{l+s}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\PY{l+s}{[Functions in }\PY{l+s}{\PYZdl{}}\PY{l+s}{\PYZob{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s}{t Julia\PYZcb{}}\PY{l+s}{\PYZdl{}}\PY{l+s}{](https://docs.julialang.org/en/v1/manual/functions/)}
+\PY{l+s}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{50}{}
+    
+    \href{https://docs.julialang.org/en/v1/manual/functions/}{Functions in ${\tt Julia}$}
+
+
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{51}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{l+s+sa}{md}\PY{l+s}{\PYZdq{}}\PY{l+s}{**Spreading Arguments**}\PY{l+s}{\PYZdq{}}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{51}{}
+    
+    \textbf{Spreading Arguments}
+
+
+
+    
+
+    \emph{Optional positional arguments}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{52}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{foo}\PY{p}{(}\PY{n}{x}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,}\PY{+w}{ }\PY{n}{y}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,}\PY{+w}{ }\PY{n}{z}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{n}{x}\PY{o}{+}\PY{n}{y}\PY{o}{+}\PY{n}{z}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{52}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+foo (generic function with 4 methods)
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{53}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{foo}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{+w}{ }\PY{n}{foo}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{2}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{3}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{53}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+(0, 6)
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{54}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{foo}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{2}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{3}\PY{p}{]}\PY{o}{...}\PY{p}{)}\PY{+w}{ }\PY{c}{\PYZsh{} Splat `...` operator}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{54}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+6
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \emph{Keywords arguments}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{55}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{bar}\PY{p}{(}\PY{p}{;}\PY{+w}{ }\PY{n}{a}\PY{o}{::}\PY{k+kt}{Real}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,}\PY{+w}{ }\PY{n}{b}\PY{o}{::}\PY{k+kt}{Real}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,}\PY{+w}{ }\PY{n}{c}\PY{o}{::}\PY{k+kt}{Real}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{n}{a}\PY{o}{+}\PY{n}{b}\PY{o}{+}\PY{n}{c}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{55}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+bar (generic function with 1 method)
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{56}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{bar}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{56}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+0
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{57}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{bar}\PY{p}{(}\PY{p}{;}\PY{+w}{ }\PY{k+kt}{Dict}\PY{p}{(}\PY{l+s+ss}{:a}\PY{+w}{ }\PY{o}{=\PYZgt{}}\PY{+w}{ }\PY{l+m+mi}{3}\PY{p}{,}\PY{+w}{ }\PY{l+s+ss}{:b}\PY{+w}{ }\PY{o}{=\PYZgt{}}\PY{+w}{ }\PY{l+m+mf}{5.4}\PY{p}{,}\PY{+w}{ }\PY{l+s+ss}{:c}\PY{+w}{ }\PY{o}{=\PYZgt{}}\PY{+w}{ }\PY{o}{\PYZhy{}}\PY{l+m+mf}{1.2}\PY{p}{)}\PY{o}{...}\PY{+w}{ }\PY{p}{)}\PY{+w}{ }\PY{c}{\PYZsh{} ; kwargs...}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{57}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+7.2
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{58}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c}{\PYZsh{} THROW AN ERROR }
+\PY{k}{try}\PY{+w}{ }\PY{n}{bar}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{2}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{3}\PY{p}{]}\PY{o}{...}\PY{p}{)}
+\PY{k}{catch}\PY{+w}{ }\PY{n}{error}
+\PY{+w}{    }\PY{n}{println}\PY{p}{(}\PY{n}{error}\PY{p}{)}
+\PY{k}{end}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+MethodError(bar, (1, 2, 3), 0x00000000000082db)
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{59}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{l+s+sa}{md}\PY{l+s}{\PYZdq{}}\PY{l+s}{**Multiple Dispatch**}\PY{l+s}{\PYZdq{}}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{59}{}
+    
+    \textbf{Multiple Dispatch}
+
+
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{60}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c}{\PYZsh{} 1st method signature}
+\PY{k}{function}\PY{+w}{ }\PY{n}{f}\PY{p}{(}\PY{n}{x}\PY{o}{::}\PY{k+kt}{Int}\PY{p}{)}
+\PY{+w}{    }\PY{n}{x}\PY{o}{\PYZca{}}\PY{l+m+mi}{2}
+\PY{k}{end}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{60}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+f (generic function with 1 method)
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{61}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c}{\PYZsh{} 2nd method signature}
+\PY{n}{f}\PY{p}{(}\PY{n}{x}\PY{o}{::}\PY{k+kt}{Float64}\PY{p}{)}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{n}{x}\PY{o}{\PYZca{}}\PY{l+m+mi}{2}\PY{o}{+}\PY{l+m+mi}{1}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{61}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+f (generic function with 2 methods)
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{62}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c}{\PYZsh{} 3rd method signature}
+\PY{n}{f}\PY{p}{(}\PY{n}{x}\PY{o}{::}\PY{k+kt}{Char}\PY{p}{)}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{n}{x}\PY{o}{*}\PY{l+s+sc}{\PYZsq{}y\PYZsq{}}\PY{o}{*}\PY{l+s+sc}{\PYZsq{}z\PYZsq{}}
+\PY{c}{\PYZsh{} 4th mehod signature}
+\PY{n}{f}\PY{p}{(}\PY{n}{x}\PY{o}{::}\PY{k+kt}{String}\PY{p}{)}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{n}{x}\PY{o}{*}\PY{n}{x}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{62}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+f (generic function with 4 methods)
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{63}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{methods}\PY{p}{(}\PY{n}{f}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{63}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\# 4 methods for generic function "f" from \textcolor{ansi-magenta}{Main}:
+ [1] f(\textcolor{ansi-black-intense}{x}::\textbf{Int64})
+\textcolor{ansi-black-intense}{     @} \textcolor{ansi-black-intense}{\underline{In[60]:2}}
+ [2] f(\textcolor{ansi-black-intense}{x}::\textbf{Float64})
+\textcolor{ansi-black-intense}{     @} \textcolor{ansi-black-intense}{\underline{In[61]:2}}
+ [3] f(\textcolor{ansi-black-intense}{x}::\textbf{Char})
+\textcolor{ansi-black-intense}{     @} \textcolor{ansi-black-intense}{\underline{In[62]:2}}
+ [4] f(\textcolor{ansi-black-intense}{x}::\textbf{String})
+\textcolor{ansi-black-intense}{     @} \textcolor{ansi-black-intense}{\underline{In[62]:4}}
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{64}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{f}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,}\PY{+w}{ }\PY{n}{f}\PY{p}{(}\PY{l+m+mf}{1.}\PY{p}{)}\PY{p}{,}\PY{+w}{ }\PY{n}{f}\PY{p}{(}\PY{l+s+sc}{\PYZsq{}x\PYZsq{}}\PY{p}{)}\PY{p}{,}\PY{+w}{ }\PY{n}{f}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{abc}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{64}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+(1, 2.0, "xyz", "abcabc")
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{65}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{mycos}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{n}{cos}\PY{p}{(}\PY{n}{x}\PY{p}{)}
+\PY{n}{mycos}\PY{p}{(}\PY{n}{adj}\PY{p}{,}\PY{+w}{ }\PY{n}{hyp}\PY{p}{)}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{n}{adj}\PY{o}{/}\PY{n}{hyp}\PY{+w}{ }\PY{c}{\PYZsh{} Extension to `mycos` function}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{65}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+mycos (generic function with 2 methods)
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{66}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{methods}\PY{p}{(}\PY{n}{mycos}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{66}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\# 2 methods for generic function "mycos" from \textcolor{ansi-magenta}{Main}:
+ [1] mycos(\textcolor{ansi-black-intense}{x})
+\textcolor{ansi-black-intense}{     @} \textcolor{ansi-black-intense}{\underline{In[65]:1}}
+ [2] mycos(\textcolor{ansi-black-intense}{adj}, \textcolor{ansi-black-intense}{hyp})
+\textcolor{ansi-black-intense}{     @} \textcolor{ansi-black-intense}{\underline{In[65]:2}}
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{67}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n+nd}{@which}\PY{+w}{ }\PY{n}{mycos}\PY{p}{(}\PY{n+nb}{π}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{67}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+mycos(\textcolor{ansi-black-intense}{x})
+\textcolor{ansi-black-intense}{     @} \textcolor{ansi-black-intense}{Main} \textcolor{ansi-black-intense}{\underline{In[65]:1}}
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{68}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n+nd}{@which}\PY{+w}{ }\PY{n}{mycos}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{3}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{68}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+mycos(\textcolor{ansi-black-intense}{adj}, \textcolor{ansi-black-intense}{hyp})
+\textcolor{ansi-black-intense}{     @} \textcolor{ansi-black-intense}{Main} \textcolor{ansi-black-intense}{\underline{In[65]:2}}
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{69}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{mycos}\PY{p}{(}\PY{n}{adj}\PY{p}{,}\PY{+w}{ }\PY{n}{hyp}\PY{o}{=}\PY{l+m+mi}{10}\PY{p}{)}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{n}{adj}\PY{o}{/}\PY{n}{hyp}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{69}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+mycos (generic function with 2 methods)
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{70}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n+nd}{@which}\PY{+w}{ }\PY{n}{mycos}\PY{p}{(}\PY{n+nb}{π}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{70}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+mycos(\textcolor{ansi-black-intense}{adj})
+\textcolor{ansi-black-intense}{     @} \textcolor{ansi-black-intense}{Main} \textcolor{ansi-black-intense}{\underline{In[69]:1}}
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \textbf{Function Chaining} applies a function to the preceding argument.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{71}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{g}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{n}{x}\PY{o}{+}\PY{l+m+mi}{1}
+\PY{n}{h}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{n}{x}\PY{o}{\PYZca{}}\PY{l+m+mi}{2}
+\PY{n}{x}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{l+m+mi}{2}\PY{+w}{ }\PY{o}{|\PYZgt{}}\PY{+w}{ }\PY{n}{g}\PY{+w}{ }\PY{o}{|\PYZgt{}}\PY{+w}{ }\PY{n}{h}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{71}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+9
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{72}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{l+s+sa}{md}\PY{l+s}{\PYZdq{}}\PY{l+s}{Another pssible way is t use `∘`\PYZus{}}\PY{l+s}{\PYZbs{}}\PY{l+s}{circ\PYZob{}tab\PYZcb{}\PYZus{} symbol}\PY{l+s}{\PYZdq{}}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{72}{}
+    
+    Another pssible way is t use \texttt{∘}\emph{{\textbackslash}circ\{tab\}} symbol
+
+
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{73}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{p}{(}\PY{n}{h∘g}\PY{p}{)}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{73}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+9
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{74}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{l+s+sa}{md}\PY{l+s}{\PYZdq{}}\PY{l+s}{Definition of a function can be done on the fly}\PY{l+s}{\PYZdq{}}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{74}{}
+    
+    Definition of a function can be done on the fly
+
+
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{75}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{y}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{l+m+mi}{5}\PY{+w}{ }\PY{o}{|\PYZgt{}}\PY{+w}{ }\PY{p}{(}\PY{n}{x}\PY{o}{\PYZhy{}\PYZgt{}}\PY{n}{x}\PY{o}{\PYZca{}}\PY{l+m+mi}{2}\PY{p}{)}\PY{+w}{ }\PY{o}{|\PYZgt{}}\PY{+w}{ }\PY{o}{√}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{75}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+5.0
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{76}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{l+s+sa}{md}\PY{l+s}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\PY{l+s}{**Metaprogramming:** Code is optimized by nature in }\PY{l+s}{\PYZdl{}}\PY{l+s}{\PYZob{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s}{t Julia\PYZcb{}}\PY{l+s}{\PYZdl{}}
+\PY{l+s}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{76}{}
+    
+    \textbf{Metaprogramming:} Code is optimized by nature in ${\tt Julia}$
+
+
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{77}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{function}\PY{+w}{ }\PY{n}{Foo}\PY{p}{(}\PY{n}{x}\PY{o}{::}\PY{k+kt}{Integer}\PY{p}{)}
+\PY{+w}{    }\PY{n}{y}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{n}{x}
+\PY{+w}{    }\PY{k}{for}\PY{+w}{ }\PY{n}{i}\PY{o}{=}\PY{l+m+mi}{1}\PY{o}{:}\PY{l+m+mi}{100}
+\PY{+w}{        }\PY{n}{y}\PY{+w}{ }\PY{o}{+=}\PY{+w}{ }\PY{n}{i}\PY{o}{\PYZca{}}\PY{l+m+mi}{2}
+\PY{+w}{    }\PY{k}{end}
+\PY{+w}{    }\PY{k}{return}\PY{+w}{ }\PY{n}{y}
+\PY{k}{end}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{77}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+Foo (generic function with 1 method)
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{78}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n+nd}{@code\PYZus{}llvm}\PY{+w}{ }\PY{n}{Foo}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{ansi-black-intense}{;  @ In[77]:1 within `Foo`}
+\textcolor{ansi-magenta-intense}{define} \textcolor{ansi-cyan}{i64} \textcolor{ansi-yellow-intense}{@julia\_Foo\_4232}\textcolor{ansi-yellow}{(}\textcolor{ansi-cyan}{i64}
+\textcolor{ansi-magenta-intense}{signext} \%0\textcolor{ansi-yellow}{)} \#0 \textcolor{ansi-yellow}{\{}
+\textcolor{ansi-red-intense}{top:}
+\textcolor{ansi-black-intense}{;  @ In[77]:3 within `Foo`}
+  \%1 = \textcolor{ansi-cyan-intense}{\textbf{add}} \textcolor{ansi-cyan}{i64} \%0, \textcolor{ansi-yellow}{338350}
+\textcolor{ansi-black-intense}{;  @ In[77]:6 within `Foo`}
+  \textcolor{ansi-cyan-intense}{\textbf{ret}} \textcolor{ansi-cyan}{i64} \%1
+\textcolor{ansi-yellow}{\}}
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{79}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{?}\PY{n+nd}{@code\PYZus{}llvm}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{79}{}
+    
+    \begin{verbatim}
+@code_llvm
+\end{verbatim}
+Evaluates the arguments to the function or macro call, determines their types, and calls \href{@ref}{\texttt{code\_llvm}} on the resulting expression. Set the optional keyword arguments \texttt{raw}, \texttt{dump\_module}, \texttt{debuginfo}, \texttt{optimize} by putting them and their value before the function call, like this:
+
+\begin{verbatim}
+@code_llvm raw=true dump_module=true debuginfo=:default f(x)
+@code_llvm optimize=false f(x)
+\end{verbatim}
+\texttt{optimize} controls whether additional optimizations, such as inlining, are also applied. \texttt{raw} makes all metadata and dbg.* calls visible. \texttt{debuginfo} may be one of \texttt{:source} (default) or \texttt{:none},  to specify the verbosity of code comments. \texttt{dump\_module} prints the entire module that encapsulates the function.
+
+
+
+    
+
+    \hypertarget{plotting-data}{%
+\subsubsection{Plotting Data}\label{plotting-data}}
+
+Visualize variables using \({\tt Julia}\)'s plotting functions.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{80}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{p}{]}\PY{n}{add}\PY{+w}{ }\PY{n}{Plots}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{ansi-green-intense}{\textbf{   Resolving}} package versions{\ldots}
+\textcolor{ansi-green-intense}{\textbf{  No Changes}} to `\textasciitilde{}/MEGA/git-repos/infodev/Codes/Project.toml`
+\textcolor{ansi-green-intense}{\textbf{  No Changes}} to `\textasciitilde{}/MEGA/git-
+repos/infodev/Codes/Manifest.toml`
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{81}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{using}\PY{+w}{ }\PY{n}{Plots}\PY{+w}{ }\PY{c}{\PYZsh{} GR is the default backend}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+WARNING: using Plots.bar in module Main conflicts with an existing identifier.
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{82}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{x}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{l+m+mi}{1}\PY{o}{:}\PY{l+m+mf}{.1}\PY{o}{:}\PY{l+m+mi}{10}
+\PY{n}{y}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{n}{sin}\PY{o}{.}\PY{p}{(}\PY{n}{x}\PY{p}{)}
+\PY{n}{z}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{n}{cos}\PY{o}{.}\PY{p}{(}\PY{n}{x}\PY{p}{)}
+
+\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{+w}{ }\PY{n}{y}\PY{p}{,}\PY{+w}{ }\PY{n}{label}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{sin(x)}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plot!}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{+w}{ }\PY{n}{z}\PY{p}{,}\PY{+w}{ }\PY{n}{label}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{cos(x)}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{+w}{ }\PY{c}{\PYZsh{} Hold on the previous plot}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{82}{}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_105_0.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{83}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{l+s+sa}{md}\PY{l+s}{\PYZdq{}}\PY{l+s}{**Scatter Plot**}\PY{l+s}{\PYZdq{}}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{83}{}
+    
+    \textbf{Scatter Plot}
+
+
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{84}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{x}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{n}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{10}\PY{p}{)}
+\PY{n}{y}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{n}{cos}\PY{o}{.}\PY{p}{(}\PY{n}{x}\PY{o}{.\PYZca{}}\PY{l+m+mi}{3}\PY{p}{)}
+\PY{n}{scatter}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{+w}{ }\PY{n}{y}\PY{p}{,}\PY{+w}{ }\PY{n}{legend}\PY{o}{=}\PY{n+nb}{false}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{84}{}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_107_0.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{85}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{l+s+sa}{md}\PY{l+s}{\PYZdq{}}\PY{l+s}{**Uniform Distribtion**}\PY{l+s}{\PYZdq{}}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{85}{}
+    
+    \textbf{Uniform Distribtion}
+
+
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{86}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{?}\PY{n}{rand}\PY{p}{;}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{87}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{x}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{n}{rand}\PY{p}{(}\PY{l+m+mi}{10}\PY{o}{\PYZca{}}\PY{l+m+mi}{5}\PY{p}{)}
+\PY{n}{histogram}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{+w}{ }\PY{n}{bins}\PY{o}{=}\PY{l+m+mi}{64}\PY{p}{,}\PY{+w}{ }\PY{n}{legend}\PY{o}{=}\PY{n+nb}{false}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{87}{}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_110_0.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{88}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{l+s+sa}{md}\PY{l+s}{\PYZdq{}}\PY{l+s}{**Normal Distribution**}\PY{l+s}{\PYZdq{}}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{88}{}
+    
+    \textbf{Normal Distribution}
+
+
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{89}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{?}\PY{n}{randn}\PY{p}{;}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{90}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{x}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{n}{randn}\PY{p}{(}\PY{l+m+mi}{10}\PY{o}{\PYZca{}}\PY{l+m+mi}{5}\PY{p}{)}
+\PY{n}{histogram}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{+w}{ }\PY{n}{bins}\PY{o}{=}\PY{l+m+mi}{64}\PY{p}{,}\PY{+w}{ }\PY{n}{legend}\PY{o}{=}\PY{n+nb}{false}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{90}{}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_113_0.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{91}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{l+s+sa}{md}\PY{l+s}{\PYZdq{}}\PY{l+s}{**Histogram in 2D**}\PY{l+s}{\PYZdq{}}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{91}{}
+    
+    \textbf{Histogram in 2D}
+
+
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{92}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{x}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{n}{randn}\PY{p}{(}\PY{l+m+mi}{10}\PY{o}{\PYZca{}}\PY{l+m+mi}{5}\PY{p}{)}
+\PY{n}{y}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{n}{randn}\PY{p}{(}\PY{l+m+mi}{10}\PY{o}{\PYZca{}}\PY{l+m+mi}{5}\PY{p}{)}
+\PY{n}{histogram2d}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{+w}{ }\PY{n}{y}\PY{p}{,}\PY{+w}{ }\PY{n}{bins}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{64}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{64}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{92}{}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_115_0.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    \hypertarget{importing-data}{%
+\subsubsection{Importing Data}\label{importing-data}}
+
+Bring data from external files into \({\tt Julia}\).
+
+    Data is typically stored in files, such as \emph{CSV} or \emph{JSON}
+files. In order to train and test machine learning models, the data
+needs to be loaded into the program. Additionally, the results of the
+training and testing process, such as model weights and performance
+metrics, also need to be saved to files. Therefore, the ability to
+manipulate files is essential for loading and saving data and model
+information in the machine learning process.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{93}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{using}\PY{+w}{ }\PY{n}{Pkg}
+\PY{n}{Pkg}\PY{o}{.}\PY{n}{add}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{DataFrames}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+\PY{n}{Pkg}\PY{o}{.}\PY{n}{add}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{CSV}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{ansi-green-intense}{\textbf{   Resolving}} package versions{\ldots}
+\textcolor{ansi-green-intense}{\textbf{  No Changes}} to `\textasciitilde{}/MEGA/git-repos/infodev/Codes/Project.toml`
+\textcolor{ansi-green-intense}{\textbf{  No Changes}} to `\textasciitilde{}/MEGA/git-
+repos/infodev/Codes/Manifest.toml`
+\textcolor{ansi-green-intense}{\textbf{   Resolving}} package versions{\ldots}
+\textcolor{ansi-green-intense}{\textbf{  No Changes}} to `\textasciitilde{}/MEGA/git-repos/infodev/Codes/Project.toml`
+\textcolor{ansi-green-intense}{\textbf{  No Changes}} to `\textasciitilde{}/MEGA/git-
+repos/infodev/Codes/Manifest.toml`
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{94}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{l+s+sa}{md}\PY{l+s}{\PYZdq{}}\PY{l+s}{Create new CSV file}\PY{l+s}{\PYZdq{}}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{94}{}
+    
+    Create new CSV file
+
+
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{95}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{using}\PY{+w}{ }\PY{n}{CSV}\PY{p}{,}\PY{+w}{ }\PY{n}{DataFrames}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{96}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{l+s+sa}{md}\PY{l+s}{\PYZdq{}}\PY{l+s}{`touch` command allows to create a file if it doesn\PYZsq{}t exist. Otherwise, it changes the file timestamps.}\PY{l+s}{\PYZdq{}}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{96}{}
+    
+    \texttt{touch} command allows to create a file if it doesn't exist. Otherwise, it changes the file timestamps.
+
+
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{97}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{touch}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{test\PYZhy{}file.csv}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{97}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+"test-file.csv"
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{98}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{p}{;}\PY{n}{ls}\PY{+w}{ }\PY{o}{\PYZhy{}}\PY{n}{la}\PY{+w}{ }\PY{n}{test}\PY{o}{\PYZhy{}}\PY{n}{file}\PY{o}{.}\PY{n}{csv}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+-rw-rw-r-- 1 mhamdi mhamdi 66 Nov 29 21:36 test-file.csv
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{99}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{file}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{n}{open}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{test\PYZhy{}file.csv}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{+w}{ }\PY{l+s}{\PYZdq{}}\PY{l+s}{w}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{99}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+IOStream(<file test-file.csv>)
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{100}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{l+s+sa}{md}\PY{l+s}{\PYZdq{}}\PY{l+s}{Let\PYZsq{}s create some imaginary data}\PY{l+s}{\PYZdq{}}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{100}{}
+    
+    Let's create some imaginary data
+
+
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{101}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{df}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{n}{DataFrame}\PY{p}{(}
+\PY{+w}{        }\PY{n}{Student}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{p}{[}\PY{l+s}{\PYZdq{}}\PY{l+s}{Mohamed}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{+w}{ }\PY{l+s}{\PYZdq{}}\PY{l+s}{Aymen}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{+w}{ }\PY{l+s}{\PYZdq{}}\PY{l+s}{Rami}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{+w}{ }\PY{l+s}{\PYZdq{}}\PY{l+s}{Ala}\PY{l+s}{\PYZdq{}}\PY{p}{]}\PY{p}{,}
+\PY{+w}{        }\PY{n}{Id}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{2}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{3}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{,}
+\PY{+w}{        }\PY{n}{Marks}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{p}{[}\PY{l+m+mi}{18}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{7}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{12}\PY{p}{,}\PY{+w}{ }\PY{l+m+mf}{5.5}\PY{p}{]}
+\PY{+w}{        }\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{101}{}
+    
+    \begin{tabular}{r|ccc}
+	& Student & Id & Marks\\
+	\hline
+	& String & Int64 & Float64\\
+	\hline
+	1 & Mohamed & 1 & 18.0 \\
+	2 & Aymen & 2 & 7.0 \\
+	3 & Rami & 3 & 12.0 \\
+	4 & Ala & 4 & 5.5 \\
+\end{tabular}
+
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{102}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{l+s+sa}{md}\PY{l+s}{\PYZdq{}}\PY{l+s}{Write `df` to file}\PY{l+s}{\PYZdq{}}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{102}{}
+    
+    Write \texttt{df} to file
+
+
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{103}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{CSV}\PY{o}{.}\PY{n}{write}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{test\PYZhy{}file.csv}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{+w}{ }\PY{n}{df}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{103}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+"test-file.csv"
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{104}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{l+s+sa}{md}\PY{l+s}{\PYZdq{}}\PY{l+s}{Open the CSV file and add some contents. See what happens when we load it again.}\PY{l+s}{\PYZdq{}}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{104}{}
+    
+    Open the CSV file and add some contents. See what happens when we load it again.
+
+
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{105}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{CSV}\PY{o}{.}\PY{n}{read}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{test\PYZhy{}file.csv}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{+w}{ }\PY{n}{DataFrame}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{105}{}
+    
+    \begin{tabular}{r|ccc}
+	& Student & Id & Marks\\
+	\hline
+	& String7 & Int64 & Float64\\
+	\hline
+	1 & Mohamed & 1 & 18.0 \\
+	2 & Aymen & 2 & 7.0 \\
+	3 & Rami & 3 & 12.0 \\
+	4 & Ala & 4 & 5.5 \\
+\end{tabular}
+
+
+    
+
+    \hypertarget{logical-arrays}{%
+\subsubsection{Logical Arrays}\label{logical-arrays}}
+
+Use logical expressions to help extracting elements of interest from
+\({\tt Julia}\) arrays.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{106}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{x}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{2}\PY{p}{,}\PY{+w}{ }\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{,}\PY{+w}{ }\PY{l+m+mf}{7.2}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{3}\PY{n+nb}{im}\PY{p}{]}
+\PY{n}{println}\PY{p}{(}\PY{n}{x}\PY{p}{)}
+\PY{n}{typeof}\PY{p}{(}\PY{n}{x}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+ComplexF64[1.0 + 0.0im, 2.0 + 0.0im, -5.0 + 0.0im, 7.2 + 0.0im, 0.0 + 3.0im]
+    \end{Verbatim}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{106}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+Vector\{ComplexF64\}\textcolor{ansi-black-intense}{ (alias for }\textcolor{ansi-black-intense}{Array\{Complex\{Float64\},
+1\}}\textcolor{ansi-black-intense}{)}
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{107}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{idx}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{p}{[}\PY{n+nb}{false}\PY{p}{,}\PY{+w}{ }\PY{n+nb}{true}\PY{p}{,}\PY{+w}{ }\PY{n+nb}{false}\PY{p}{,}\PY{+w}{ }\PY{n+nb}{false}\PY{p}{,}\PY{+w}{ }\PY{n+nb}{true}\PY{p}{]}
+\PY{n}{print}\PY{p}{(}\PY{n}{x}\PY{p}{[}\PY{n}{idx}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+ComplexF64[2.0 + 0.0im, 0.0 + 3.0im]
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{108}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{M}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{k+kt}{Array}\PY{p}{\PYZob{}}\PY{k+kt}{Float64}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{2}\PY{p}{\PYZcb{}}\PY{p}{(}\PY{n+nb}{undef}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{5}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{4}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{108}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+5×4 Matrix\{Float64\}:
+ 6.90677e-310  6.90677e-310  6.90677e-310  6.90676e-310
+ 6.90677e-310  6.90677e-310  6.90677e-310  6.90676e-310
+ 6.90677e-310  6.90677e-310  6.90676e-310  6.90676e-310
+ 6.90677e-310  6.90677e-310  6.90676e-310  6.90676e-310
+ 6.90677e-310  6.90677e-310  6.90677e-310  6.90677e-310
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{109}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{row\PYZus{}idx}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{p}{[}\PY{n+nb}{true}\PY{p}{,}\PY{+w}{ }\PY{n+nb}{false}\PY{p}{,}\PY{+w}{ }\PY{n+nb}{true}\PY{p}{,}\PY{+w}{ }\PY{n+nb}{true}\PY{p}{,}\PY{+w}{ }\PY{n+nb}{false}\PY{p}{]}\PY{p}{;}
+\PY{n}{col\PYZus{}idx}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{p}{[}\PY{n+nb}{false}\PY{p}{,}\PY{+w}{ }\PY{n+nb}{true}\PY{p}{,}\PY{+w}{ }\PY{n+nb}{true}\PY{p}{,}\PY{+w}{ }\PY{n+nb}{false}\PY{p}{]}\PY{p}{;}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{110}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{M}\PY{p}{[}\PY{n}{row\PYZus{}idx}\PY{p}{,}\PY{+w}{ }\PY{o}{:}\PY{p}{]}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{110}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+3×4 Matrix\{Float64\}:
+ 6.90677e-310  6.90677e-310  6.90677e-310  6.90676e-310
+ 6.90677e-310  6.90677e-310  6.90676e-310  6.90676e-310
+ 6.90677e-310  6.90677e-310  6.90676e-310  6.90676e-310
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{111}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{M}\PY{p}{[}\PY{o}{:}\PY{p}{,}\PY{+w}{ }\PY{n}{col\PYZus{}idx}\PY{p}{]}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{111}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+5×2 Matrix\{Float64\}:
+ 6.90677e-310  6.90677e-310
+ 6.90677e-310  6.90677e-310
+ 6.90677e-310  6.90676e-310
+ 6.90677e-310  6.90676e-310
+ 6.90677e-310  6.90677e-310
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{112}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{M}\PY{p}{[}\PY{n}{row\PYZus{}idx}\PY{p}{,}\PY{+w}{ }\PY{n}{col\PYZus{}idx}\PY{p}{]}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{112}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+3×2 Matrix\{Float64\}:
+ 6.90677e-310  6.90677e-310
+ 6.90677e-310  6.90676e-310
+ 6.90677e-310  6.90676e-310
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \hypertarget{programming}{%
+\subsubsection{Programming}\label{programming}}
+
+Write programs that execute code based on some condition.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{113}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{l+s+sa}{md}\PY{l+s}{\PYZdq{}}\PY{l+s}{**Conditional Evaluation**}\PY{l+s}{\PYZdq{}}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{113}{}
+    
+    \textbf{Conditional Evaluation}
+
+
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{114}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{a}\PY{p}{,}\PY{+w}{ }\PY{n}{b}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{n+nb}{π}\PY{p}{,}\PY{+w}{ }\PY{n+nb}{π}
+\PY{k}{if}\PY{+w}{ }\PY{n}{a}\PY{+w}{ }\PY{o}{\PYZlt{}}\PY{+w}{ }\PY{n}{b}
+\PY{+w}{    }\PY{n}{println}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s+si}{\PYZdl{}a}\PY{l+s}{ is less than }\PY{l+s+si}{\PYZdl{}b}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+\PY{k}{elseif}\PY{+w}{ }\PY{n}{a}\PY{+w}{ }\PY{o}{\PYZgt{}}\PY{+w}{ }\PY{n}{b}
+\PY{+w}{    }\PY{n}{println}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s+si}{\PYZdl{}a}\PY{l+s}{ is greater than }\PY{l+s+si}{\PYZdl{}b}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+\PY{k}{else}
+\PY{+w}{    }\PY{n}{println}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s+si}{\PYZdl{}a}\PY{l+s}{ is equal to }\PY{l+s+si}{\PYZdl{}b}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+\PY{k}{end}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+π is equal to π
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{115}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{l+s+sa}{md}\PY{l+s}{\PYZdq{}}\PY{l+s}{**`While` Loop**}\PY{l+s}{\PYZdq{}}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{115}{}
+    
+    \textbf{\texttt{While} Loop}
+
+
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{116}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{fruits}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{p}{[}\PY{l+s}{\PYZdq{}}\PY{l+s}{Blueberry}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{+w}{ }\PY{l+s}{\PYZdq{}}\PY{l+s}{Orange}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{+w}{ }\PY{l+s}{\PYZdq{}}\PY{l+s}{Banana}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{+w}{ }\PY{l+s}{\PYZdq{}}\PY{l+s}{Raspberry}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{+w}{ }\PY{l+s}{\PYZdq{}}\PY{l+s}{Strawberry}\PY{l+s}{\PYZdq{}}\PY{p}{]}
+\PY{n}{iter}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{l+m+mi}{1}
+\PY{k}{while}\PY{+w}{ }\PY{n}{iter}\PY{+w}{ }\PY{o}{≤}\PY{+w}{ }\PY{n}{length}\PY{p}{(}\PY{n}{fruits}\PY{p}{)}
+\PY{+w}{    }\PY{n}{println}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Item \PYZsh{}}\PY{l+s+si}{\PYZdl{}iter}\PY{l+s}{ is }\PY{l+s+si}{\PYZdl{}}\PY{p}{(}\PY{n}{fruits}\PY{p}{[}\PY{n}{iter}\PY{p}{]}\PY{p}{)}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+\PY{+w}{    }\PY{n}{iter}\PY{+w}{ }\PY{o}{+=}\PY{l+m+mi}{1}
+\PY{k}{end}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Item \#1 is Blueberry
+Item \#2 is Orange
+Item \#3 is Banana
+Item \#4 is Raspberry
+Item \#5 is Strawberry
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{117}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{l+s+sa}{md}\PY{l+s}{\PYZdq{}}\PY{l+s}{**`For` Loop**}\PY{l+s}{\PYZdq{}}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{117}{}
+    
+    \textbf{\texttt{For} Loop}
+
+
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{118}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{vegetables}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{p}{[}\PY{l+s}{\PYZdq{}}\PY{l+s}{Broccoli}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{+w}{ }\PY{l+s}{\PYZdq{}}\PY{l+s}{Garlic}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{+w}{ }\PY{l+s}{\PYZdq{}}\PY{l+s}{Mushrooms}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{+w}{ }\PY{l+s}{\PYZdq{}}\PY{l+s}{Potatoes}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{+w}{ }\PY{l+s}{\PYZdq{}}\PY{l+s}{Tomatoes}\PY{l+s}{\PYZdq{}}\PY{p}{]}
+\PY{n}{i}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{l+m+mi}{1}
+\PY{k}{for}\PY{+w}{ }\PY{n}{item}\PY{+w}{ }\PY{k}{in}\PY{+w}{ }\PY{n}{vegetables}
+\PY{+w}{    }\PY{n}{println}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Item \PYZsh{}}\PY{l+s+si}{\PYZdl{}i}\PY{l+s}{ is }\PY{l+s+si}{\PYZdl{}item}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+\PY{+w}{    }\PY{n}{i}\PY{+w}{ }\PY{o}{+=}\PY{+w}{ }\PY{l+m+mi}{1}
+\PY{k}{end}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Item \#1 is Broccoli
+Item \#2 is Garlic
+Item \#3 is Mushrooms
+Item \#4 is Potatoes
+Item \#5 is Tomatoes
+    \end{Verbatim}
+
+    \hypertarget{final-project}{%
+\subsubsection{Final Project}\label{final-project}}
+
+Bring together concepts that you have learned with a project.
+
+    This simple project consists of implementing a basic calculator. This
+latter could have the ability to perform basic arithmetic operations
+like \emph{addition}, \emph{subtraction}, \emph{multiplication}, and
+\emph{division}.
+
+Here are the steps to be followed: 1. Create a function called
+\texttt{calculator()} that takes two arguments, \texttt{x} and
+\texttt{y}, and a char operation that specifies which operation to
+perform. 1. Use an \texttt{if-else} statement to check the value of
+operation. Depending on the value of operation, call the appropriate
+function to perform the calculation. 1. Test the calculator function by
+calling it with different values for \texttt{x}, \texttt{y}, and
+operation and printing the result. 1. Once the basic calculator is
+working, we can improve it by adding more functionality such as handling
+decimals and negative numbers, or implementing more advanced operations
+such as square root, power, trigonometry and so on. 1. Finally, we could
+also experiment with different input types, such as command line
+arguments or a graphical user interface.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{119}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{l+s+sa}{md}\PY{l+s}{\PYZdq{}}\PY{l+s}{Here is an example of how the basic calculator function could look like:}\PY{l+s}{\PYZdq{}}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{119}{}
+    
+    Here is an example of how the basic calculator function could look like:
+
+
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{120}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{function}\PY{+w}{ }\PY{n}{calculator}\PY{p}{(}\PY{n}{x}\PY{o}{::}\PY{k+kt}{Number}\PY{p}{,}\PY{+w}{ }\PY{n}{y}\PY{o}{::}\PY{k+kt}{Number}\PY{p}{,}\PY{+w}{ }\PY{n}{op}\PY{o}{::}\PY{k+kt}{Char}\PY{p}{)}
+\PY{+w}{    }\PY{k}{if}\PY{+w}{ }\PY{n}{op}\PY{+w}{ }\PY{o}{==}\PY{+w}{ }\PY{l+s+sc}{\PYZsq{}+\PYZsq{}}
+\PY{+w}{        }\PY{k}{return}\PY{+w}{ }\PY{n}{x}\PY{+w}{ }\PY{o}{+}\PY{+w}{ }\PY{n}{y}
+\PY{+w}{    }\PY{k}{elseif}\PY{+w}{ }\PY{n}{op}\PY{+w}{ }\PY{o}{==}\PY{+w}{ }\PY{l+s+sc}{\PYZsq{}\PYZhy{}\PYZsq{}}
+\PY{+w}{        }\PY{k}{return}\PY{+w}{ }\PY{n}{x}\PY{+w}{ }\PY{o}{\PYZhy{}}\PY{+w}{ }\PY{n}{y}
+\PY{+w}{    }\PY{k}{elseif}\PY{+w}{ }\PY{n}{op}\PY{+w}{ }\PY{o}{==}\PY{+w}{ }\PY{l+s+sc}{\PYZsq{}*\PYZsq{}}
+\PY{+w}{        }\PY{k}{return}\PY{+w}{ }\PY{n}{x}\PY{+w}{ }\PY{o}{*}\PY{+w}{ }\PY{n}{y}
+\PY{+w}{    }\PY{k}{elseif}\PY{+w}{ }\PY{n}{op}\PY{+w}{ }\PY{k}{in}\PY{+w}{ }\PY{p}{[}\PY{l+s+sc}{\PYZsq{}/\PYZsq{}}\PY{p}{,}\PY{+w}{ }\PY{l+s+sc}{\PYZsq{}÷\PYZsq{}}\PY{p}{]}
+\PY{+w}{        }\PY{k}{return}\PY{+w}{ }\PY{n}{x}\PY{+w}{ }\PY{o}{/}\PY{+w}{ }\PY{n}{y}
+\PY{+w}{    }\PY{k}{else}
+\PY{+w}{        }\PY{k}{return}\PY{+w}{ }\PY{l+s}{\PYZdq{}}\PY{l+s}{INVALID OPERATION}\PY{l+s}{\PYZdq{}}
+\PY{+w}{    }\PY{k}{end}
+\PY{k}{end}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{120}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+calculator (generic function with 1 method)
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{121}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{println}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Summation is }\PY{l+s+si}{\PYZdl{}}\PY{p}{(}\PY{n}{calculator}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{3}\PY{p}{,}\PY{+w}{ }\PY{l+s+sc}{\PYZsq{}+\PYZsq{}}\PY{p}{)}\PY{p}{)}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+\PY{n}{println}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Subtraction is }\PY{l+s+si}{\PYZdl{}}\PY{p}{(}\PY{n}{calculator}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{3}\PY{p}{,}\PY{+w}{ }\PY{l+s+sc}{\PYZsq{}\PYZhy{}\PYZsq{}}\PY{p}{)}\PY{p}{)}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+\PY{n}{println}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Multiplication is }\PY{l+s+si}{\PYZdl{}}\PY{p}{(}\PY{n}{calculator}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{3}\PY{p}{,}\PY{+w}{ }\PY{l+s+sc}{\PYZsq{}*\PYZsq{}}\PY{p}{)}\PY{p}{)}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+\PY{n}{println}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Division is }\PY{l+s+si}{\PYZdl{}}\PY{p}{(}\PY{n}{calculator}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{3}\PY{p}{,}\PY{+w}{ }\PY{l+s+sc}{\PYZsq{}÷\PYZsq{}}\PY{p}{)}\PY{p}{)}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+\PY{n}{println}\PY{p}{(}\PY{n}{calculator}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,}\PY{+w}{ }\PY{l+m+mi}{3}\PY{p}{,}\PY{+w}{ }\PY{l+s+sc}{\PYZsq{}×\PYZsq{}}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Summation is 8
+Subtraction is 2
+Multiplication is 15
+Division is 1.6666666666666667
+INVALID OPERATION
+    \end{Verbatim}
+
+    \textbf{Miscallenous}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{122}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{l+s+sa}{md}\PY{l+s}{\PYZdq{}}\PY{l+s}{Check your version of Julia}\PY{l+s}{\PYZdq{}}
+\PY{n}{versioninfo}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Julia Version 1.9.3
+Commit bed2cd540a (2023-08-24 14:43 UTC)
+Build Info:
+
+    Note: This is an unofficial build, please report bugs to the project
+    responsible for this build and not to the Julia project unless you can
+    reproduce the issue using official builds available at
+https://julialang.org/downloads
+
+Platform Info:
+  OS: Linux (x86\_64-linux-gnu)
+  CPU: 8 × Intel(R) Core(TM) i7-8565U CPU @ 1.80GHz
+  WORD\_SIZE: 64
+  LIBM: libopenlibm
+  LLVM: libLLVM-14.0.6 (ORCJIT, skylake)
+  Threads: 2 on 8 virtual cores
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{123}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{l+s+sa}{md}\PY{l+s}{\PYZdq{}}\PY{l+s}{The macro `@edit` shows the defintion of a function when invoked with specific arguments}\PY{l+s}{\PYZdq{}}
+\PY{c}{\PYZsh{} @edit maximum([\PYZhy{}1, 0, 1])}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{123}{}
+    
+    The macro \texttt{@edit} shows the defintion of a function when invoked with specific arguments
+
+
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{124}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{l+s+sa}{md}\PY{l+s}{\PYZdq{}}\PY{l+s}{`varinfo` lists all global variables and their corresponding types in the current scope}\PY{l+s}{\PYZdq{}}
+\PY{n}{varinfo}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{124}{}
+    
+    \begin{tabular}
+{l | r | l}
+name & size & summary \\
+\hline
+Base &  & Module \\
+Core &  & Module \\
+Foo & 0 bytes & Foo (generic function with 1 method) \\
+M & 200 bytes & 5×4 Matrix\{Float64\} \\
+Main &  & Module \\
+PLOTS\_DEFAULTS & 456 bytes & Dict\{Symbol, Symbol\} with 1 entry \\
+a & 0 bytes & Irrational\{:π\} \\
+b & 0 bytes & Irrational\{:π\} \\
+bar & 0 bytes & bar (generic function with 1 method) \\
+calculator & 0 bytes & calculator (generic function with 1 method) \\
+col\_idx & 44 bytes & 4-element Vector\{Bool\} \\
+df & 915 bytes & 4×3 DataFrame \\
+dict & 503 bytes & Dict\{String, Int64\} with 3 entries \\
+f & 0 bytes & f (generic function with 4 methods) \\
+file & 372 bytes & IOStream \\
+foo & 0 bytes & foo (generic function with 4 methods) \\
+fruits & 160 bytes & 5-element Vector\{String\} \\
+g & 0 bytes & g (generic function with 1 method) \\
+h & 0 bytes & h (generic function with 1 method) \\
+i & 8 bytes & Int64 \\
+idx & 45 bytes & 5-element Vector\{Bool\} \\
+iter & 8 bytes & Int64 \\
+lst & 176 bytes & 5-element Vector\{Any\} \\
+mycos & 0 bytes & mycos (generic function with 2 methods) \\
+row\_idx & 45 bytes & 5-element Vector\{Bool\} \\
+showall & 0 bytes & showall (generic function with 1 method) \\
+str & 19 bytes & 11-codeunit String \\
+tmp & 1 byte & UInt8 \\
+var & 80 bytes & 2×4 BitMatrix \\
+vegetables & 159 bytes & 5-element Vector\{String\} \\
+x & 120 bytes & 5-element Vector\{ComplexF64\} \\
+y & 781.289 KiB & 100000-element Vector\{Float64\} \\
+z & 768 bytes & 91-element Vector\{Float64\} \\
+\end{tabular}
+
+
+    
+
+    \emph{Modules}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{125}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{module}\PY{+w}{ }\PY{n}{MyModule}
+\PY{k}{export}\PY{+w}{ }\PY{n}{a}
+\PY{n}{a}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{l+m+mi}{0}
+\PY{n}{b}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{n+nb}{true}
+\PY{k}{end}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{125}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+Main.MyModule
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{126}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{varinfo}\PY{p}{(}\PY{n}{MyModule}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+ 
+            
+\prompt{Out}{outcolor}{126}{}
+    
+    \begin{tabular}
+{l | r | l}
+name & size & summary \\
+\hline
+MyModule & 2.304 KiB & Module \\
+a & 8 bytes & Int64 \\
+\end{tabular}
+
+
+    
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{127}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{a}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{127}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+π = 3.1415926535897{\ldots}
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{128}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{MyModule}\PY{o}{.}\PY{n}{a}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{128}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+0
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{129}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{MyModule}\PY{o}{.}\PY{n}{b}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{129}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+true
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+\end{document}
