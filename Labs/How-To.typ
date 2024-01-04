@@ -42,8 +42,8 @@ Consider using Typst to write your lab reports. The provided templates allow you
 Typst supports Markdown syntax, which provides a range of formatting options @Mailund2019. Here are some points to help you write your report:
 
 +	Formatting Text:
-	-	Surround a text with double asterisks '(\*\*)' to make it bold
-	-	Use single asterisks '(\*)' or underscores '(\_)' around your text to emphasize it
+	-	Surround a text with single asterisks '(\*)' to make it bold
+	-	Use single underscores '(\_)' around your text to emphasize it
 	-	To create headings, use equal signs '(=)' followed by a space at the begining of a line. The number of '(=)' symbols determines the heading level.
 +	Inserting Objects:
 	-	Use this syntax if you need to insert an image:
@@ -113,4 +113,3 @@ The following timeline is proposed to help you organize your work. It is not man
 
 #block(width: 500pt, spacing: 3cm, tml)
 //#rotate(-90deg)[#tml]
-

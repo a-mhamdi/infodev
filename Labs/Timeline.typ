@@ -7,7 +7,7 @@
 timeliney.timeline(
   show-grid: true,
   {     
-    headerline(group(([*Feb*], 5)), group(([*March*], 5)), group(([*April*], 5)))
+    headerline(group(([*Feb.*], 5)), group(([*Mar.*], 5)), group(([*Apr.*], 5)))
     headerline(
       group(..range(5).map(n => strong("W" + str(n + 1)))),
       group(..range(5).map(n => strong("W" + str(n + 1)))),
