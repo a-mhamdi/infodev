@@ -1,4 +1,4 @@
-# Julia for general purpose
+# Julia for general-purpose applications
 
 ![Julia](https://raw.githubusercontent.com/a-mhamdi/infodev/main/Codes/Julia.png)
 
