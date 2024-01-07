@@ -1,21 +1,23 @@
-FROM julia:latest
+FROM julia:1.10.0
 LABEL author="A. Mhamdi <a_mhamdi@outlook.com>"
 
 # Expose ports
-EXPOSE 1234 2468 9384
+EXPOSE 1234 2468 8000 9384
 
 # Set ENV variables
 ENV USERNAME mhamdi 
 ENV USER_HOME_DIR /home/${USERNAME}
 ENV JULIA_DEPOT_PATH ${USER_HOME_DIR}/.julia
 ENV JL ${JULIA_DEPOT_PATH}/conda/3/bin/jupyter\ lab
-ENV WORKING_DIR ${USER_HOME_DIR}/work
+ARG WORKING_DIR=${USER_HOME_DIR}/work
 
 # Add user and set ownership
 RUN useradd -ms /bin/bash  -p $(echo ${USERNAME} | openssl passwd -1 -stdin) ${USERNAME}
 
-# Change user & working directory
+# Change user and working directory
 USER ${USERNAME}
+WORKDIR ${USER_HOME_DIR}
+RUN mkdir -p ${WORKING_DIR}
 WORKDIR ${WORKING_DIR}
 
 # Copy TOML files (deps, ver, pkg, UUID)

@@ -1,5 +1,3 @@
-module App
-
 using GenieFramework
 @genietools
 
@@ -23,4 +21,4 @@ using GenieFramework
 end
     
 @page("/", "app.jl.html")
-end
+
