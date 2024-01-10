@@ -19,6 +19,7 @@ for i in range(1, 100)
     txt = "[TALKER] " * msg.data 
     @info txt
     rclpy.spin_once(node)
+    sleep(1)
 end
 
 # Cleanup
