@@ -8,6 +8,7 @@ rclpy.init()
 
 # Create node
 node = rclpy.create_node("my_publisher")
+rclpy.spin_once(node, timeout_sec=1)
 
 # Create a publisher, specify the message type and the topic name
 pub = node.create_publisher(str.String, "infodev", 10)
@@ -18,10 +19,10 @@ for i in range(1, 100)
     pub.publish(msg)
     txt = "[TALKER] " * msg.data 
     @info txt
-    rclpy.spin_once(node)
     sleep(1)
 end
 
 # Cleanup
-node.destroy_node()
 rclpy.shutdown()
+node.destroy_node()
+
