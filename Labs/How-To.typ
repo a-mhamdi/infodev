@@ -27,7 +27,7 @@ The programming language we are going to learn through this module is Julia. @fi
 	- its high-performance computing capabilities,
 	- expressive syntax, and 
 	- extensive ecosystem.
-Julia is an ideal language for scientific computing, data analysis, and numerical simulations @Nagar2017 @SenGupta2020 @Lauwens2019.
+Julia is an ideal language for scientific computing, data analysis, and numerical simulations @Nagar2017 @SenGupta2020 @Lauwens2019. A quick reference guide for key concepts, syntax, and formulas is available at #highlight[#link("cheatsheet.juliadocs.org")[cheatsheet.juliadocs.org]].
 
 #figure(
 	image("Images/Julia.png", width: 30%),

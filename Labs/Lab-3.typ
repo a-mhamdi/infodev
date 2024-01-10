@@ -43,8 +43,13 @@
   // bibliography-file: "Biblio.bib",
 )
 
-= Exercises
-In this lab, you will create a basic web application using *Genie* framework in Julia. The application will allow us to control the behaviour of a sine wave, given some adjustble parameters.
+= Exercise
+In this lab, you will create a basic web application using *Genie* framework in Julia. The application will allow us to control the behaviour of a sine wave, given some adjustble parameters. You are required to carry out this lab using the REPL as in @fig:repl.
+
+#figure(
+	image("Images/REPL.png", width: 100%, fit: "contain"),
+	caption: "Julia REPL"
+	) <fig:repl>
 
 #exo[Sine Wave Control][We provide the Julia and HTML codes to build and run a web app that allows us to control the amplitude and frequency of a sine wave. *Plotly* is used to plot the corresponding graph. We also added a slider to change the number of samples used to draw the figure. The latter setting permits to grasp the influence of sampling frequency on the look of our chart.]
 

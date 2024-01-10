@@ -43,6 +43,13 @@
   // bibliography-file: "Biblio.bib",
 )
 
+You are required to carry out this lab using the REPL as in @fig:repl.
+
+#figure(
+	image("Images/REPL.png", width: 100%, fit: "contain"),
+	caption: "Julia REPL"
+	) <fig:repl>
+	
 #exo[Minimal Publisher/Subscriber Setup][The combination of Julia and rclpy opens up opportunities for developing efficient and performant robotics applications with the benefits of ROS2s ecosystem.]
 
 #test[Make sure to read the instructions thoroughly, follow each step precisely, and ask for clarification if needed.]
