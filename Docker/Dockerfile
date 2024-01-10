@@ -1,6 +1,8 @@
 FROM julia:1.10.0
 LABEL author="A. Mhamdi <a_mhamdi@outlook.com>"
 
+RUN apt-get update && apt-get install -y libgl1-mesa-dev
+
 # Expose ports
 EXPOSE 1234 2468 8000 9384
 
