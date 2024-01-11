@@ -43,9 +43,12 @@
   // bibliography-file: "Biblio.bib",
 )
 
-You are required to carry out this lab using:
+You are required to carry out this lab using the REPL as in @fig:repl.
 
-#figure(image("Images/Pluto.svg", width: 40%, fit: "contain")) 
+#figure(
+	image("Images/REPL.png", width: 100%, fit: "contain"),
+	caption: "Julia REPL"
+	) <fig:repl>
 
 = Topic
 The main topic of this lab is to manipulate the sine wave parameters, namely: amplitude, frequency and phase, in *Makie*, which is an interactive graphics library that allows for the creation and manipulation of high-quality visualizations. 
