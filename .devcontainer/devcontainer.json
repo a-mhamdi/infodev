@@ -1,7 +1,7 @@
-// See https://github.com/julia-vscode/julia-devcontainer/blob/master/Dockerfile for image contents
+
 {
-	"name": "Julia (Community)",
-	"image": "ghcr.io/julia-vscode/julia-devcontainer",
+	"name": "Typst",
+	"image": "ghcr.io/typst/typst:latest",
 
 	// Configure tool-specific properties.
 	"customizations": {
@@ -9,11 +9,8 @@
 		"vscode": {
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
-				"julialang.language-julia",
-				"eamodio.gitlens",
 				"yzhang.markdown-all-in-one",
-				"ms-toolsai.jupyter",
-				"ms-toolsai.jupyter-renderers"
+				"nvarner.typst-lsp"
 			]
 		}
 	},
