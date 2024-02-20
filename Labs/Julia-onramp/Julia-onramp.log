@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.10.18)  3 JAN 2024 14:40
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.10.18)  10 FEB 2024 22:14
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -346,661 +346,34 @@ Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 )))
-(/usr/share/texlive/texmf-dist/tex/latex/libertine/libertine.sty
-Package: libertine 2020/03/26 (Bob Tennent) Supports Libertine and Biolinum fon
-ts for all LaTeX engines.
-
-(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifxetex.sty
-Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
-)
-(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty
-Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
-)
-(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
-
-(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
-(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks30
-\XKV@tempa@toks=\toks31
-)
-\XKV@depth=\count272
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-))
-(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
-Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
-)
-(/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.sty
-(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2022-01-21 L3 programming layer (loader) 
-
-(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
-File: l3backend-xetex.def 2022-01-12 L3 backend support: XeTeX
-
-(|extractbb --version)
-\c__kernel_sys_dvipdfmx_version_int=\count273
-\l__color_backend_stack_int=\count274
-\g__color_backend_stack_int=\count275
-\g__graphics_track_int=\count276
-\l__pdf_internal_box=\box68
-\g__pdf_backend_object_int=\count277
-\g__pdf_backend_annotation_int=\count278
-\g__pdf_backend_link_int=\count279
-))
-Package: xparse 2022-01-12 L3 Experimental document command parser
-)
-Package: fontspec 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
-
-(/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
-Package: fontspec-xetex 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTe
-X
-\l__fontspec_script_int=\count280
-\l__fontspec_language_int=\count281
-\l__fontspec_strnum_int=\count282
-\l__fontspec_tmp_int=\count283
-\l__fontspec_tmpa_int=\count284
-\l__fontspec_tmpb_int=\count285
-\l__fontspec_tmpc_int=\count286
-\l__fontspec_em_int=\count287
-\l__fontspec_emdef_int=\count288
-\l__fontspec_strong_int=\count289
-\l__fontspec_strongdef_int=\count290
-\l__fontspec_tmpa_dim=\dimen180
-\l__fontspec_tmpb_dim=\dimen181
-\l__fontspec_tmpc_dim=\dimen182
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
-)
-(/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
-Requested font "[LinLibertine_R.otf]/OT" at 10.94997pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-R.otf
-Requested font "[LinLibertine_R.otf]/OT" at 10.95003pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-R.otf
-Requested font "[LinLibertine_R.otf]/OT:script=latn;language=dflt;" at 10.95003
-pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-R.otf
-Requested font "[LinLibertine_RB.otf]/OT:script=latn;language=dflt;" at 10.9500
-3pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-RB.otf
-Requested font "[LinLibertine_RI.otf]/OT:script=latn;language=dflt;" at 10.9500
-3pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-RI.otf
-Requested font "[LinLibertine_RBI.otf]/OT:script=latn;language=dflt;" at 10.950
-03pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-RBI.otf
-
-Package fontspec Info: Font family 'LinLibertine(0)' created for font
-(fontspec)             'LinLibertine' with options [Ligatures = TeX,Extension
-(fontspec)             =
-(fontspec)             .otf,SmallCapsFeatures={Letters=SmallCaps},Ligatures=TeX
-,Numbers
-(fontspec)             = {Monospaced,Lining},Scale = 1,UprightFont =
-(fontspec)             *_R,ItalicFont = *_RI,BoldFont = *_RB,BoldItalicFont =
-(fontspec)             *_RBI].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_R.otf]/OT:script=latn;language=df
-lt;+tnum;+lnum;mapping=tex-text;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_R.otf]/OT:script=latn;language=df
-lt;+tnum;+lnum;+smcp;mapping=tex-text;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_RB.otf]/OT:script=latn;language=d
-flt;+tnum;+lnum;mapping=tex-text;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_RB.otf]/OT:script=latn;language=d
-flt;+tnum;+lnum;+smcp;mapping=tex-text;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_RI.otf]/OT:script=latn;language=d
-flt;+tnum;+lnum;mapping=tex-text;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_RI.otf]/OT:script=latn;language=d
-flt;+tnum;+lnum;+smcp;mapping=tex-text;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_RBI.otf]/OT:script=latn;language=
-dflt;+tnum;+lnum;mapping=tex-text;"
-(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_RBI.otf]/OT:script=latn;language=
-dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
-
-LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
-(Font)              scaled to size 10.95pt on input line 308.
-Requested font "[LinLibertine_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;m
-apping=tex-text;" at 10.95pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-R.otf
-Requested font "[LinBiolinum_R.otf]/OT" at 10.94997pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinBiolinum_R
-.otf
-Requested font "[LinBiolinum_R.otf]/OT" at 10.95003pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinBiolinum_R
-.otf
-Requested font "[LinBiolinum_R.otf]/OT:script=latn;language=dflt;" at 10.95003p
-t
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinBiolinum_R
-.otf
-Requested font "[LinBiolinum_RB.otf]/OT:script=latn;language=dflt;" at 10.95003
-pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinBiolinum_R
-B.otf
-
-
-Package fontspec Warning: OpenType feature 'Numbers=Uppercase' (lnum) not
-(fontspec)                available for font 'LinBiolinum_RB' with script
-(fontspec)                'CustomDefault' and language 'Default'.
-
-
-Package fontspec Warning: OpenType feature 'Numbers=Uppercase' (lnum) not
-(fontspec)                available for font 'LinBiolinum_RB' with script
-(fontspec)                'CustomDefault' and language 'Default'.
-
-Requested font "[LinBiolinum_RI.otf]/OT:script=latn;language=dflt;" at 10.95003
-pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinBiolinum_R
-I.otf
-Requested font "[LinBiolinum_RBO.otf]/OT:script=latn;language=dflt;" at 10.9500
-3pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinBiolinum_R
-BO.otf
-
-Package fontspec Info: Font family 'LinBiolinum(0)' created for font
-(fontspec)             'LinBiolinum' with options [Ligatures = TeX,Extension =
-(fontspec)             .otf,SmallCapsFeatures={Letters=SmallCaps},Ligatures=TeX
-,Numbers
-(fontspec)             = {Monospaced, Lining},Scale = 1,UprightFont =
-(fontspec)             *_R,ItalicFont = *_RI,BoldFont = *_RB,BoldItalicFont =
-(fontspec)             *_RBO].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinBiolinum_R.otf]/OT:script=latn;language=dfl
-t;+tnum;+lnum;mapping=tex-text;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinBiolinum_R.otf]/OT:script=latn;language=dfl
-t;+tnum;+lnum;+smcp;mapping=tex-text;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinBiolinum_RB.otf]/OT:script=latn;language=df
-lt;+tnum;mapping=tex-text;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinBiolinum_RB.otf]/OT:script=latn;language=df
-lt;+tnum;+smcp;mapping=tex-text;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinBiolinum_RI.otf]/OT:script=latn;language=df
-lt;+tnum;+lnum;mapping=tex-text;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinBiolinum_RI.otf]/OT:script=latn;language=df
-lt;+tnum;+lnum;+smcp;mapping=tex-text;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinBiolinum_RBO.otf]/OT:script=latn;language=d
-flt;+tnum;+lnum;mapping=tex-text;"
-(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinBiolinum_RBO.otf]/OT:script=latn;language=d
-flt;+tnum;+lnum;+smcp;mapping=tex-text;"
-
-
-Package fontspec Info: Font family 'LinLibertine(1)' created for font
-(fontspec)             'LinLibertine' with options [Ligatures = TeX,Extension
-(fontspec)             = .otf,SmallCapsFeatures={Letters=SmallCaps},Numbers =
-(fontspec)             {Monospaced,Lining},Scale = 1,UprightFont =
-(fontspec)             *_R,ItalicFont = *_RI,BoldFont = *_RB,BoldItalicFont =
-(fontspec)             *_RBI].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_R.otf]/OT:script=latn;language=df
-lt;+tnum;+lnum;mapping=tex-text;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_R.otf]/OT:script=latn;language=df
-lt;+tnum;+lnum;+smcp;mapping=tex-text;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_RB.otf]/OT:script=latn;language=d
-flt;+tnum;+lnum;mapping=tex-text;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_RB.otf]/OT:script=latn;language=d
-flt;+tnum;+lnum;+smcp;mapping=tex-text;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_RI.otf]/OT:script=latn;language=d
-flt;+tnum;+lnum;mapping=tex-text;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_RI.otf]/OT:script=latn;language=d
-flt;+tnum;+lnum;+smcp;mapping=tex-text;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_RBI.otf]/OT:script=latn;language=
-dflt;+tnum;+lnum;mapping=tex-text;"
-(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_RBI.otf]/OT:script=latn;language=
-dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
-
-Requested font "[LinLibertine_RZ.otf]/OT" at 10.94997pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-RZ.otf
-Requested font "[LinLibertine_RZ.otf]/OT" at 10.95003pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-RZ.otf
-Requested font "[LinLibertine_RZ.otf]/OT:script=latn;language=dflt;" at 10.9500
-3pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-RZ.otf
-Requested font "[LinLibertine_RZI.otf]/OT:script=latn;language=dflt;" at 10.950
-03pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-RZI.otf
-
-Package fontspec Warning: OpenType feature 'Numbers= Monospaced, Lining'
-(fontspec)                (tnum) not available for font 'LinLibertine_RZI'
-(fontspec)                with script 'CustomDefault' and language 'Default'.
-
-
-Package fontspec Warning: OpenType feature 'Numbers= Monospaced, Lining'
-(fontspec)                (tnum) not available for font 'LinLibertine_RZI'
-(fontspec)                with script 'CustomDefault' and language 'Default'.
-
-
-Package fontspec Info: Font family 'LinLibertine(2)' created for font
-(fontspec)             'LinLibertine' with options [Ligatures = TeX,Extension
-(fontspec)             = .otf,SmallCapsFeatures={Letters=SmallCaps},Numbers =
-(fontspec)             { Monospaced, Lining},Scale = 1,UprightFont =
-(fontspec)             *_RZ,ItalicFont = *_RZI,BoldFont = *_RB,BoldItalicFont
-(fontspec)             = *_RBI].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_RZ.otf]/OT:script=latn;language=d
-flt;+tnum;+lnum;mapping=tex-text;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_RZ.otf]/OT:script=latn;language=d
-flt;+tnum;+lnum;+smcp;mapping=tex-text;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_RB.otf]/OT:script=latn;language=d
-flt;+tnum;+lnum;mapping=tex-text;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_RB.otf]/OT:script=latn;language=d
-flt;+tnum;+lnum;+smcp;mapping=tex-text;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_RZI.otf]/OT:script=latn;language=
-dflt;+lnum;mapping=tex-text;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_RZI.otf]/OT:script=latn;language=
-dflt;+lnum;+smcp;mapping=tex-text;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_RBI.otf]/OT:script=latn;language=
-dflt;+tnum;+lnum;mapping=tex-text;"
-(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_RBI.otf]/OT:script=latn;language=
-dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
-
-
-Package fontspec Info: Font family 'LinLibertine(3)' created for font
-(fontspec)             'LinLibertine' with options [Ligatures = TeX,Extension
-(fontspec)             = .otf,SmallCapsFeatures={Letters=SmallCaps},Numbers =
-(fontspec)             {Monospaced,OldStyle},Scale = 1,UprightFont =
-(fontspec)             *_R,ItalicFont = *_RI,BoldFont = *_RB,BoldItalicFont =
-(fontspec)             *_RBI].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_R.otf]/OT:script=latn;language=df
-lt;+tnum;+onum;mapping=tex-text;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_R.otf]/OT:script=latn;language=df
-lt;+tnum;+onum;+smcp;mapping=tex-text;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_RB.otf]/OT:script=latn;language=d
-flt;+tnum;+onum;mapping=tex-text;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_RB.otf]/OT:script=latn;language=d
-flt;+tnum;+onum;+smcp;mapping=tex-text;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_RI.otf]/OT:script=latn;language=d
-flt;+tnum;+onum;mapping=tex-text;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_RI.otf]/OT:script=latn;language=d
-flt;+tnum;+onum;+smcp;mapping=tex-text;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_RBI.otf]/OT:script=latn;language=
-dflt;+tnum;+onum;mapping=tex-text;"
-(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_RBI.otf]/OT:script=latn;language=
-dflt;+tnum;+onum;+smcp;mapping=tex-text;"
-
-Requested font "[LinLibertine_DR.otf]/OT" at 10.94997pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-DR.otf
-Requested font "[LinLibertine_DR.otf]/OT" at 10.95003pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-DR.otf
-Requested font "[LinLibertine_DR.otf]/OT:script=latn;language=dflt;" at 10.9500
-3pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-DR.otf
-
-Package fontspec Info: Font family 'LinLibertine(4)' created for font
-(fontspec)             'LinLibertine' with options [Ligatures = TeX,Extension
-(fontspec)             = .otf,SmallCapsFeatures={Letters=SmallCaps},Numbers =
-(fontspec)             {Monospaced,Lining},UprightFont = *_DR,ItalicFont =
-(fontspec)             *_RI,BoldFont = *_RB,BoldItalicFont = *_RBI].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"[LinLibertine_DR.otf]/OT:script=latn;language=dflt;+
-tnum;+lnum;mapping=tex-text;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->"[LinLibertine_RB.otf]/OT:script=latn;language=dflt;+
-tnum;+lnum;mapping=tex-text;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->"[LinLibertine_RB.otf]/OT:script=latn;language=dflt;+
-tnum;+lnum;+smcp;mapping=tex-text;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->"[LinLibertine_RI.otf]/OT:script=latn;language=dflt;+
-tnum;+lnum;mapping=tex-text;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->"[LinLibertine_RI.otf]/OT:script=latn;language=dflt;+
-tnum;+lnum;+smcp;mapping=tex-text;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->"[LinLibertine_RBI.otf]/OT:script=latn;language=dflt;
-+tnum;+lnum;mapping=tex-text;"
-(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->"[LinLibertine_RBI.otf]/OT:script=latn;language=dflt;
-+tnum;+lnum;+smcp;mapping=tex-text;"
-
-
-Package fontspec Warning: OpenType feature 'Numbers=Uppercase' (lnum) not
-(fontspec)                available for font 'LinBiolinum_RB' with script
-(fontspec)                'CustomDefault' and language 'Default'.
-
-
-Package fontspec Warning: OpenType feature 'Numbers=Uppercase' (lnum) not
-(fontspec)                available for font 'LinBiolinum_RB' with script
-(fontspec)                'CustomDefault' and language 'Default'.
-
-
-Package fontspec Info: Font family 'LinBiolinum(1)' created for font
-(fontspec)             'LinBiolinum' with options [Ligatures = TeX,Extension =
-(fontspec)             .otf,SmallCapsFeatures={Letters=SmallCaps},Numbers =
-(fontspec)             {Monospaced, Lining},Scale = 1,UprightFont =
-(fontspec)             *_R,ItalicFont = *_RI,BoldFont = *_RB,BoldItalicFont =
-(fontspec)             *_RBO].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinBiolinum_R.otf]/OT:script=latn;language=dfl
-t;+tnum;+lnum;mapping=tex-text;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinBiolinum_R.otf]/OT:script=latn;language=dfl
-t;+tnum;+lnum;+smcp;mapping=tex-text;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinBiolinum_RB.otf]/OT:script=latn;language=df
-lt;+tnum;mapping=tex-text;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinBiolinum_RB.otf]/OT:script=latn;language=df
-lt;+tnum;+smcp;mapping=tex-text;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinBiolinum_RI.otf]/OT:script=latn;language=df
-lt;+tnum;+lnum;mapping=tex-text;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinBiolinum_RI.otf]/OT:script=latn;language=df
-lt;+tnum;+lnum;+smcp;mapping=tex-text;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinBiolinum_RBO.otf]/OT:script=latn;language=d
-flt;+tnum;+lnum;mapping=tex-text;"
-(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinBiolinum_RBO.otf]/OT:script=latn;language=d
-flt;+tnum;+lnum;+smcp;mapping=tex-text;"
-
-
-Package fontspec Info: Font family 'LinBiolinum(2)' created for font
-(fontspec)             'LinBiolinum' with options [Ligatures = TeX,Extension =
-(fontspec)             .otf,SmallCapsFeatures={Letters=SmallCaps},Numbers =
-(fontspec)             {Monospaced, OldStyle},Scale = 1,UprightFont =
-(fontspec)             *_R,ItalicFont = *_RI,BoldFont = *_RB,BoldItalicFont =
-(fontspec)             *_RBO].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinBiolinum_R.otf]/OT:script=latn;language=dfl
-t;+tnum;+onum;mapping=tex-text;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinBiolinum_R.otf]/OT:script=latn;language=dfl
-t;+tnum;+onum;+smcp;mapping=tex-text;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinBiolinum_RB.otf]/OT:script=latn;language=df
-lt;+tnum;+onum;mapping=tex-text;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinBiolinum_RB.otf]/OT:script=latn;language=df
-lt;+tnum;+onum;+smcp;mapping=tex-text;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinBiolinum_RI.otf]/OT:script=latn;language=df
-lt;+tnum;+onum;mapping=tex-text;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinBiolinum_RI.otf]/OT:script=latn;language=df
-lt;+tnum;+onum;+smcp;mapping=tex-text;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinBiolinum_RBO.otf]/OT:script=latn;language=d
-flt;+tnum;+onum;mapping=tex-text;"
-(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinBiolinum_RBO.otf]/OT:script=latn;language=d
-flt;+tnum;+onum;+smcp;mapping=tex-text;"
-
-Requested font "[LinLibertine_M.otf]/OT" at 10.94997pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-M.otf
-Requested font "[LinLibertine_M.otf]/OT" at 10.95003pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-M.otf
-Requested font "[LinLibertine_M.otf]/OT:script=latn;language=dflt;" at 10.95003
-pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-M.otf
-Requested font "[LinLibertine_MB.otf]/OT:script=latn;language=dflt;" at 10.9500
-3pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-MB.otf
-Requested font "[LinLibertine_MO.otf]/OT:script=latn;language=dflt;" at 10.9500
-3pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-MO.otf
-Requested font "[LinLibertine_MBO.otf]/OT:script=latn;language=dflt;" at 10.950
-03pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-MBO.otf
-
-Package fontspec Info: Font family 'LinLibertine(5)' created for font
-(fontspec)             'LinLibertine' with options [Extension =
-(fontspec)             .otf,HyphenChar=None,WordSpace={1,0,0},HyphenChar=None,P
-unctuationSpace=WordSpace,Scale
-(fontspec)             = 1,UprightFont = *_M,ItalicFont = *_MO,BoldFont =
-(fontspec)             *_MB,BoldItalicFont = *_MBO].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_M.otf]/OT:script=latn;language=df
-lt;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-(fontspec)             and font adjustment code:
-(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
-(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
-(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
-(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop:
-(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_MB.otf]/OT:script=latn;language=d
-flt;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
-(fontspec)             and font adjustment code:
-(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
-(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
-(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
-(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop:
-(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_MO.otf]/OT:script=latn;language=d
-flt;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
-(fontspec)             and font adjustment code:
-(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
-(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
-(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
-(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop:
-(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_MBO.otf]/OT:script=latn;language=
-dflt;"
-(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
-(fontspec)             and font adjustment code:
-(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
-(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
-(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
-(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop:
-(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
-
-
-Package fontspec Info: Font family 'LinLibertine(6)' created for font
-(fontspec)             'LinLibertine' with options [Extension =
-(fontspec)             .otf,HyphenChar=None,Scale = 1,UprightFont =
-(fontspec)             *_M,ItalicFont = *_MO,BoldFont = *_MB,BoldItalicFont =
-(fontspec)             *_MBO].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_M.otf]/OT:script=latn;language=df
-lt;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-(fontspec)             and font adjustment code:
-(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_MB.otf]/OT:script=latn;language=d
-flt;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
-(fontspec)             and font adjustment code:
-(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_MO.otf]/OT:script=latn;language=d
-flt;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
-(fontspec)             and font adjustment code:
-(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[1]"[LinLibertine_MBO.otf]/OT:script=latn;language=
-dflt;"
-(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
-(fontspec)             and font adjustment code:
-(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
-
-Requested font "[LinBiolinum_K.otf]/OT" at 10.94997pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinBiolinum_K
-.otf
-Requested font "[LinBiolinum_K.otf]/OT" at 10.95003pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinBiolinum_K
-.otf
-Requested font "[LinBiolinum_K.otf]/OT:script=latn;language=dflt;" at 10.95003p
-t
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinBiolinum_K
-.otf
-
-Package fontspec Info: Font family 'LinBiolinum_K(0)' created for font
-(fontspec)             'LinBiolinum_K' with options [Extension =
-(fontspec)             .otf,HyphenChar=None,BoldFont={},ItalicFont={},SmallCaps
-Font={}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"[LinBiolinum_K.otf]/OT:script=latn;language=dflt;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-(fontspec)             and font adjustment code:
-(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
-
-Requested font "[LinLibertine_I.otf]/OT" at 10.94997pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-I.otf
-Requested font "[LinLibertine_I.otf]/OT" at 10.95003pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-I.otf
-Requested font "[LinLibertine_I.otf]/OT:script=latn;language=dflt;" at 10.95003
-pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-I.otf
-
-Package fontspec Info: Font family 'LinLibertine_I(0)' created for font
-(fontspec)             'LinLibertine_I' with options [Extension =
-(fontspec)             .otf,HyphenChar=None,BoldFont={},ItalicFont={},SmallCaps
-Font={}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"[LinLibertine_I.otf]/OT:script=latn;language=dflt;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-(fontspec)             and font adjustment code:
-(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
-
-LaTeX Info: Redefining \oldstylenums on input line 474.
-LaTeX Info: Redefining \liningnums on input line 475.
-(/usr/share/texlive/texmf-dist/tex/latex/libertine/LinLibertine_R.tex)
-(/usr/share/texlive/texmf-dist/tex/latex/libertine/LinBiolinum_R.tex)
-(/usr/share/texlive/texmf-dist/tex/latex/libertine/LinBiolinum_K.tex)
-(/usr/share/texlive/texmf-dist/tex/latex/libertine/LinLibertine_I.tex)
-(/usr/share/texlive/texmf-dist/tex/latex/libertine/LKey.tex))
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2020/10/26 v3.5g Customizing captions (AR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
-\captionmargin=\dimen183
-\captionmargin@=\dimen184
-\captionwidth=\dimen185
-\caption@tempdima=\dimen186
-\caption@indent=\dimen187
-\caption@parindent=\dimen188
-\caption@hangindent=\dimen189
+\captionmargin=\dimen180
+\captionmargin@=\dimen181
+\captionwidth=\dimen182
+\caption@tempdima=\dimen183
+\caption@indent=\dimen184
+\caption@parindent=\dimen185
+\caption@hangindent=\dimen186
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count291
-\c@continuedfloat=\count292
+\c@caption@flags=\count272
+\c@continuedfloat=\count273
 )
 (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count293
-\float@exts=\toks32
-\float@box=\box69
-\@float@everytoks=\toks33
-\@floatcapt=\box70
+\c@float@type=\count274
+\float@exts=\toks30
+\float@box=\box68
+\@float@everytoks=\toks31
+\@floatcapt=\box69
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/enumerate.sty
 Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
-\@enLab=\toks34
+\@enLab=\toks32
 )
 (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
@@ -1008,18 +381,18 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
 (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count294
-\Gm@cntv=\count295
-\c@Gm@tempcnt=\count296
-\Gm@bindingoffset=\dimen190
-\Gm@wd@mp=\dimen191
-\Gm@odd@mp=\dimen192
-\Gm@even@mp=\dimen193
-\Gm@layoutwidth=\dimen194
-\Gm@layoutheight=\dimen195
-\Gm@layouthoffset=\dimen196
-\Gm@layoutvoffset=\dimen197
-\Gm@dimlist=\toks35
+\Gm@cnth=\count275
+\Gm@cntv=\count276
+\c@Gm@tempcnt=\count277
+\Gm@bindingoffset=\dimen187
+\Gm@wd@mp=\dimen188
+\Gm@odd@mp=\dimen189
+\Gm@even@mp=\dimen190
+\Gm@layoutwidth=\dimen191
+\Gm@layoutheight=\dimen192
+\Gm@layouthoffset=\dimen193
+\Gm@layoutvoffset=\dimen194
+\Gm@dimlist=\toks33
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2021/10/15 v2.17l AMS math features
@@ -1031,51 +404,51 @@ Package: amstext 2021/08/26 v2.01 AMS text
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks36
-\ex@=\dimen198
+\@emptytoks=\toks34
+\ex@=\dimen195
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen199
+\pmbraise@=\dimen196
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2021/08/26 v2.02 operator names
 )
-\inf@bad=\count297
+\inf@bad=\count278
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count298
-\leftroot@=\count299
+\uproot@=\count279
+\leftroot@=\count280
 LaTeX Info: Redefining \overline on input line 399.
-\classnum@=\count300
-\DOTSCASE@=\count301
+\classnum@=\count281
+\DOTSCASE@=\count282
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box71
-\strutbox@=\box72
-\big@size=\dimen256
+\Mathstrutbox@=\box70
+\strutbox@=\box71
+\big@size=\dimen197
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count302
-\c@MaxMatrixCols=\count303
+\macc@depth=\count283
+\c@MaxMatrixCols=\count284
 \dotsspace@=\muskip16
-\c@parentequation=\count304
-\dspbrk@lvl=\count305
-\tag@help=\toks37
-\row@=\count306
-\column@=\count307
-\maxfields@=\count308
-\andhelp@=\toks38
-\eqnshift@=\dimen257
-\alignsep@=\dimen258
-\tagshift@=\dimen259
-\tagwidth@=\dimen260
-\totwidth@=\dimen261
-\lineht@=\dimen262
-\@envbody=\toks39
+\c@parentequation=\count285
+\dspbrk@lvl=\count286
+\tag@help=\toks35
+\row@=\count287
+\column@=\count288
+\maxfields@=\count289
+\andhelp@=\toks36
+\eqnshift@=\dimen198
+\alignsep@=\dimen199
+\tagshift@=\dimen256
+\tagwidth@=\dimen257
+\totwidth@=\dimen258
+\lineht@=\dimen259
+\@envbody=\toks37
 \multlinegap=\skip50
 \multlinetaggap=\skip51
-\mathdisplay@stack=\toks40
+\mathdisplay@stack=\toks38
 LaTeX Info: Redefining \[ on input line 2938.
 LaTeX Info: Redefining \] on input line 2939.
 )
@@ -1090,44 +463,476 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+)
 (/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
 )
 (/usr/share/texlive/texmf-dist/tex/latex/eurosym/eurosym.sty
 Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
-\@eurobox=\box73
+\@eurobox=\box72
 )
-(/usr/share/texlive/texmf-dist/tex/latex/unicode-math/unicode-math.sty
-Package: unicode-math 2020/01/31 v0.8q Unicode maths in XeLaTeX and LuaLaTeX
+(/usr/share/texlive/texmf-dist/tex/latex/alegreya/Alegreya.sty
+Package: Alegreya 2019/10/12 (Bob Tennent) Supports Alegreya and AlegreyaSC fon
+ts for all LaTeX engines. 
 
-(/usr/share/texlive/texmf-dist/tex/latex/unicode-math/unicode-math-xetex.sty
-Package: unicode-math-xetex 2020/01/31 v0.8q Unicode maths in XeLaTeX and LuaLa
-TeX
-
-(/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
-Package: l3keys2e 2022-01-12 LaTeX2e option processing using LaTeX3 keys
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifxetex.sty
+Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/base/fix-cm.sty
-Package: fix-cm 2020/11/24 v1.1t fixes to LaTeX
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def
-File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
-LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks39
+\XKV@tempa@toks=\toks40
+)
+\XKV@depth=\count290
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
-\g__um_fam_int=\count309
-\g__um_fonts_used_int=\count310
-\l__um_primecount_int=\count311
-\g__um_primekern_muskip=\muskip17
+(/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2022-01-21 L3 programming layer (loader) 
 
-(/usr/share/texlive/texmf-dist/tex/latex/unicode-math/unicode-math-table.tex)))
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
+File: l3backend-xetex.def 2022-01-12 L3 backend support: XeTeX
+
+(|extractbb --version)
+\c__kernel_sys_dvipdfmx_version_int=\count291
+\l__color_backend_stack_int=\count292
+\g__color_backend_stack_int=\count293
+\g__graphics_track_int=\count294
+\l__pdf_internal_box=\box73
+\g__pdf_backend_object_int=\count295
+\g__pdf_backend_annotation_int=\count296
+\g__pdf_backend_link_int=\count297
+))
+Package: xparse 2022-01-12 L3 Experimental document command parser
+)
+Package: fontspec 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
+Package: fontspec-xetex 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTe
+X
+\l__fontspec_script_int=\count298
+\l__fontspec_language_int=\count299
+\l__fontspec_strnum_int=\count300
+\l__fontspec_tmp_int=\count301
+\l__fontspec_tmpa_int=\count302
+\l__fontspec_tmpb_int=\count303
+\l__fontspec_tmpc_int=\count304
+\l__fontspec_em_int=\count305
+\l__fontspec_emdef_int=\count306
+\l__fontspec_strong_int=\count307
+\l__fontspec_strongdef_int=\count308
+\l__fontspec_tmpa_dim=\dimen260
+\l__fontspec_tmpb_dim=\dimen261
+\l__fontspec_tmpc_dim=\dimen262
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
+Requested font "[Alegreya-Regular.otf]/OT" at 10.94997pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/huerta/alegreya/Alegreya-Regul
+ar.otf
+Requested font "[Alegreya-Regular.otf]/OT" at 10.95003pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/huerta/alegreya/Alegreya-Regul
+ar.otf
+Requested font "[Alegreya-Regular.otf]/OT:script=latn;language=dflt;" at 10.950
+03pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/huerta/alegreya/Alegreya-Regul
+ar.otf
+Requested font "[Alegreya-Bold.otf]/OT:script=latn;language=dflt;" at 10.95003p
+t
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/huerta/alegreya/Alegreya-Bold.
+otf
+Requested font "[Alegreya-Italic.otf]/OT:script=latn;language=dflt;" at 10.9500
+3pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/huerta/alegreya/Alegreya-Itali
+c.otf
+Requested font "[Alegreya-BoldItalic.otf]/OT:script=latn;language=dflt;" at 10.
+95003pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/huerta/alegreya/Alegreya-BoldI
+talic.otf
+
+Package fontspec Info: Font family 'Alegreya(0)' created for font 'Alegreya'
+(fontspec)             with options [Ligatures = TeX,Extension = .otf,Scale =
+(fontspec)             1,Ligatures=TeX,Numbers =
+(fontspec)             {Proportional,Lining},UprightFont =
+(fontspec)             *-Regular,ItalicFont = *-Italic,BoldFont =
+(fontspec)             *-Bold,BoldItalicFont = *-BoldItalic].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Regular.otf]/OT:script=latn;language=
+dflt;+pnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Regular.otf]/OT:script=latn;language=
+dflt;+pnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Bold.otf]/OT:script=latn;language=dfl
+t;+pnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Bold.otf]/OT:script=latn;language=dfl
+t;+pnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Italic.otf]/OT:script=latn;language=d
+flt;+pnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Italic.otf]/OT:script=latn;language=d
+flt;+pnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-BoldItalic.otf]/OT:script=latn;langua
+ge=dflt;+pnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-BoldItalic.otf]/OT:script=latn;langua
+ge=dflt;+pnum;+lnum;+smcp;mapping=tex-text;"
+
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
+(Font)              scaled to size 10.95pt on input line 169.
+Requested font "[Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum
+;mapping=tex-text;" at 10.95pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/huerta/alegreya/Alegreya-Regul
+ar.otf
+
+Package fontspec Info: Font family 'Alegreya(1)' created for font 'Alegreya'
+(fontspec)             with options [Ligatures = TeX,Extension = .otf,Scale =
+(fontspec)             1,Numbers = {Proportional,Lining},UprightFont =
+(fontspec)             *-Regular,ItalicFont = *-Italic,BoldFont =
+(fontspec)             *-Bold,BoldItalicFont = *-BoldItalic].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Regular.otf]/OT:script=latn;language=
+dflt;+pnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Regular.otf]/OT:script=latn;language=
+dflt;+pnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Bold.otf]/OT:script=latn;language=dfl
+t;+pnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Bold.otf]/OT:script=latn;language=dfl
+t;+pnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Italic.otf]/OT:script=latn;language=d
+flt;+pnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Italic.otf]/OT:script=latn;language=d
+flt;+pnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-BoldItalic.otf]/OT:script=latn;langua
+ge=dflt;+pnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-BoldItalic.otf]/OT:script=latn;langua
+ge=dflt;+pnum;+lnum;+smcp;mapping=tex-text;"
+
+
+Package fontspec Info: Font family 'Alegreya(2)' created for font 'Alegreya'
+(fontspec)             with options [Ligatures = TeX,Extension = .otf,Scale =
+(fontspec)             1,Numbers = {Proportional,OldStyle},UprightFont =
+(fontspec)             *-Regular,ItalicFont = *-Italic,BoldFont =
+(fontspec)             *-Bold,BoldItalicFont = *-BoldItalic].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Regular.otf]/OT:script=latn;language=
+dflt;+pnum;+onum;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Regular.otf]/OT:script=latn;language=
+dflt;+pnum;+onum;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Bold.otf]/OT:script=latn;language=dfl
+t;+pnum;+onum;mapping=tex-text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Bold.otf]/OT:script=latn;language=dfl
+t;+pnum;+onum;+smcp;mapping=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Italic.otf]/OT:script=latn;language=d
+flt;+pnum;+onum;mapping=tex-text;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Italic.otf]/OT:script=latn;language=d
+flt;+pnum;+onum;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-BoldItalic.otf]/OT:script=latn;langua
+ge=dflt;+pnum;+onum;mapping=tex-text;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-BoldItalic.otf]/OT:script=latn;langua
+ge=dflt;+pnum;+onum;+smcp;mapping=tex-text;"
+
+
+Package fontspec Info: Font family 'Alegreya(3)' created for font 'Alegreya'
+(fontspec)             with options [Ligatures = TeX,Extension = .otf,Scale =
+(fontspec)             1,Numbers = {Monospaced,OldStyle},UprightFont =
+(fontspec)             *-Regular,ItalicFont = *-Italic,BoldFont =
+(fontspec)             *-Bold,BoldItalicFont = *-BoldItalic].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Regular.otf]/OT:script=latn;language=
+dflt;+tnum;+onum;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Regular.otf]/OT:script=latn;language=
+dflt;+tnum;+onum;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Bold.otf]/OT:script=latn;language=dfl
+t;+tnum;+onum;mapping=tex-text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Bold.otf]/OT:script=latn;language=dfl
+t;+tnum;+onum;+smcp;mapping=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Italic.otf]/OT:script=latn;language=d
+flt;+tnum;+onum;mapping=tex-text;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Italic.otf]/OT:script=latn;language=d
+flt;+tnum;+onum;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-BoldItalic.otf]/OT:script=latn;langua
+ge=dflt;+tnum;+onum;mapping=tex-text;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-BoldItalic.otf]/OT:script=latn;langua
+ge=dflt;+tnum;+onum;+smcp;mapping=tex-text;"
+
+
+Package fontspec Info: Font family 'Alegreya(4)' created for font 'Alegreya'
+(fontspec)             with options [Ligatures = TeX,Extension = .otf,Scale =
+(fontspec)             1,Numbers = {Proportional, OldStyle},UprightFont =
+(fontspec)             *-Regular,ItalicFont = *-Italic,BoldFont =
+(fontspec)             *-Bold,BoldItalicFont = *-BoldItalic].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Regular.otf]/OT:script=latn;language=
+dflt;+pnum;+onum;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Regular.otf]/OT:script=latn;language=
+dflt;+pnum;+onum;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Bold.otf]/OT:script=latn;language=dfl
+t;+pnum;+onum;mapping=tex-text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Bold.otf]/OT:script=latn;language=dfl
+t;+pnum;+onum;+smcp;mapping=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Italic.otf]/OT:script=latn;language=d
+flt;+pnum;+onum;mapping=tex-text;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Italic.otf]/OT:script=latn;language=d
+flt;+pnum;+onum;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-BoldItalic.otf]/OT:script=latn;langua
+ge=dflt;+pnum;+onum;mapping=tex-text;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-BoldItalic.otf]/OT:script=latn;langua
+ge=dflt;+pnum;+onum;+smcp;mapping=tex-text;"
+
+
+Package fontspec Info: Font family 'Alegreya(5)' created for font 'Alegreya'
+(fontspec)             with options [Ligatures = TeX,Extension = .otf,Scale =
+(fontspec)             1,Numbers = {Monospaced,Lining},UprightFont =
+(fontspec)             *-Regular,ItalicFont = *-Italic,BoldFont =
+(fontspec)             *-Bold,BoldItalicFont = *-BoldItalic].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Regular.otf]/OT:script=latn;language=
+dflt;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Regular.otf]/OT:script=latn;language=
+dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Bold.otf]/OT:script=latn;language=dfl
+t;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Bold.otf]/OT:script=latn;language=dfl
+t;+tnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Italic.otf]/OT:script=latn;language=d
+flt;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Italic.otf]/OT:script=latn;language=d
+flt;+tnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-BoldItalic.otf]/OT:script=latn;langua
+ge=dflt;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-BoldItalic.otf]/OT:script=latn;langua
+ge=dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
+
+Requested font "[Alegreya-ExtraBold.otf]/OT" at 10.94997pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/huerta/alegreya/Alegreya-Extra
+Bold.otf
+Requested font "[Alegreya-ExtraBold.otf]/OT" at 10.95003pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/huerta/alegreya/Alegreya-Extra
+Bold.otf
+Requested font "[Alegreya-ExtraBold.otf]/OT:script=latn;language=dflt;" at 10.9
+5003pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/huerta/alegreya/Alegreya-Extra
+Bold.otf
+Requested font "[Alegreya-ExtraBoldItalic.otf]/OT:script=latn;language=dflt;" a
+t 10.95003pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/huerta/alegreya/Alegreya-Extra
+BoldItalic.otf
+
+Package fontspec Info: Font family 'Alegreya(6)' created for font 'Alegreya'
+(fontspec)             with options [Ligatures = TeX,Extension = .otf,Scale =
+(fontspec)             1,Numbers = {Proportional,Lining},UprightFont =
+(fontspec)             *-ExtraBold,ItalicFont = *-ExtraBoldItalic,BoldFont =
+(fontspec)             *-ExtraBold,BoldItalicFont = *-ExtraBoldItalic].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-ExtraBold.otf]/OT:script=latn;languag
+e=dflt;+pnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-ExtraBold.otf]/OT:script=latn;languag
+e=dflt;+pnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-ExtraBold.otf]/OT:script=latn;languag
+e=dflt;+pnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-ExtraBold.otf]/OT:script=latn;languag
+e=dflt;+pnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-ExtraBoldItalic.otf]/OT:script=latn;l
+anguage=dflt;+pnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-ExtraBoldItalic.otf]/OT:script=latn;l
+anguage=dflt;+pnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-ExtraBoldItalic.otf]/OT:script=latn;l
+anguage=dflt;+pnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-ExtraBoldItalic.otf]/OT:script=latn;l
+anguage=dflt;+pnum;+lnum;+smcp;mapping=tex-text;"
+
+Requested font "[Alegreya-Black.otf]/OT" at 10.94997pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/huerta/alegreya/Alegreya-Black
+.otf
+Requested font "[Alegreya-Black.otf]/OT" at 10.95003pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/huerta/alegreya/Alegreya-Black
+.otf
+Requested font "[Alegreya-Black.otf]/OT:script=latn;language=dflt;" at 10.95003
+pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/huerta/alegreya/Alegreya-Black
+.otf
+Requested font "[Alegreya-BlackItalic.otf]/OT:script=latn;language=dflt;" at 10
+.95003pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/huerta/alegreya/Alegreya-Black
+Italic.otf
+
+Package fontspec Info: Font family 'Alegreya(7)' created for font 'Alegreya'
+(fontspec)             with options [Ligatures = TeX,Extension = .otf,Scale =
+(fontspec)             1,Numbers = {Proportional,Lining},UprightFont =
+(fontspec)             *-Black,ItalicFont = *-BlackItalic,BoldFont =
+(fontspec)             *-Black,BoldItalicFont = *-BlackItalic].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Black.otf]/OT:script=latn;language=df
+lt;+pnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Black.otf]/OT:script=latn;language=df
+lt;+pnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Black.otf]/OT:script=latn;language=df
+lt;+pnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Black.otf]/OT:script=latn;language=df
+lt;+pnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-BlackItalic.otf]/OT:script=latn;langu
+age=dflt;+pnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-BlackItalic.otf]/OT:script=latn;langu
+age=dflt;+pnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-BlackItalic.otf]/OT:script=latn;langu
+age=dflt;+pnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-BlackItalic.otf]/OT:script=latn;langu
+age=dflt;+pnum;+lnum;+smcp;mapping=tex-text;"
+
+Requested font "[Alegreya-Medium.otf]/OT" at 10.94997pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/huerta/alegreya/Alegreya-Mediu
+m.otf
+Requested font "[Alegreya-Medium.otf]/OT" at 10.95003pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/huerta/alegreya/Alegreya-Mediu
+m.otf
+Requested font "[Alegreya-Medium.otf]/OT:script=latn;language=dflt;" at 10.9500
+3pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/huerta/alegreya/Alegreya-Mediu
+m.otf
+Requested font "[Alegreya-MediumItalic.otf]/OT:script=latn;language=dflt;" at 1
+0.95003pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/huerta/alegreya/Alegreya-Mediu
+mItalic.otf
+
+Package fontspec Info: Font family 'Alegreya(8)' created for font 'Alegreya'
+(fontspec)             with options [Ligatures = TeX,Extension = .otf,Scale =
+(fontspec)             1,Numbers = {Proportional,Lining},UprightFont =
+(fontspec)             *-Medium,ItalicFont = *-MediumItalic,BoldFont =
+(fontspec)             *-Medium,BoldItalicFont = *-MediumItalic].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Medium.otf]/OT:script=latn;language=d
+flt;+pnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Medium.otf]/OT:script=latn;language=d
+flt;+pnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Medium.otf]/OT:script=latn;language=d
+flt;+pnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-Medium.otf]/OT:script=latn;language=d
+flt;+pnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-MediumItalic.otf]/OT:script=latn;lang
+uage=dflt;+pnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-MediumItalic.otf]/OT:script=latn;lang
+uage=dflt;+pnum;+lnum;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-MediumItalic.otf]/OT:script=latn;lang
+uage=dflt;+pnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[Alegreya-MediumItalic.otf]/OT:script=latn;lang
+uage=dflt;+pnum;+lnum;+smcp;mapping=tex-text;"
+
+)
 (/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2021/12/21 4.1b verbatim text (tvz,hv)
-\FV@CodeLineNo=\count312
+\FV@CodeLineNo=\count309
 \FV@InFile=\read4
 \FV@TabBox=\box74
-\c@FancyVerbLine=\count313
-\FV@StepNumber=\count314
+\c@FancyVerbLine=\count310
+\FV@StepNumber=\count311
 \FV@OutFile=\write4
 )
 (/usr/share/texlive/texmf-dist/tex/latex/grffile/grffile.sty
@@ -1170,12 +975,12 @@ File: tc-xetex.def 2019/01/04 v2.2 Clipping driver for xetex
 
 (/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count315
+\c@checkoddpage=\count312
 )
 (/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box76
-\sift@deathcycles=\count316
+\sift@deathcycles=\count313
 \@vwid@loff=\dimen275
 \@vwid@roff=\dimen276
 ))
@@ -1205,8 +1010,8 @@ Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
 \@linkdim=\dimen277
-\Hy@linkcounter=\count317
-\Hy@pagecounter=\count318
+\Hy@linkcounter=\count314
+\Hy@pagecounter=\count315
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2021-06-07 v7.00m Hyperref: PDFDocEncoding definition (HO)
@@ -1221,7 +1026,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count319
+\Hy@SavedSpaceFactor=\count316
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2021-06-07 v7.00m Hyperref: PDF Unicode definition (HO)
@@ -1233,10 +1038,10 @@ Package hyperref Info: Plain pages OFF on input line 4207.
 Package hyperref Info: Backreferencing OFF on input line 4212.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4445.
-\c@Hy@tempcnt=\count320
+\c@Hy@tempcnt=\count317
 
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
-\Urlmuskip=\muskip18
+\Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4804.
@@ -1251,7 +1056,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count321
+\Fld@menulength=\count318
 \Field@Width=\dimen279
 \Fld@charsize=\dimen280
 Package hyperref Info: Hyper figures OFF on input line 6076.
@@ -1268,9 +1073,9 @@ LaTeX Info: Redefining \pageref on input line 6150.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count322
-\c@Item=\count323
-\c@Hfootnote=\count324
+\Hy@abspage=\count319
+\c@Item=\count320
+\c@Hfootnote=\count321
 )
 Package hyperref Info: Driver (autodetected): hxetex.
 
@@ -1282,10 +1087,10 @@ Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
 \pdfm@box=\box77
-\c@Hy@AnnotLevel=\count325
-\HyField@AnnotCount=\count326
-\Fld@listcount=\count327
-\c@bookmark@seq@number=\count328
+\c@Hy@AnnotLevel=\count322
+\HyField@AnnotCount=\count323
+\Fld@listcount=\count324
+\c@bookmark@seq@number=\count325
 
 (/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
@@ -1315,17 +1120,17 @@ Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
 \LTright=\skip57
 \LTpre=\skip58
 \LTpost=\skip59
-\LTchunksize=\count329
+\LTchunksize=\count326
 \LTcapwidth=\dimen281
 \LT@head=\box78
 \LT@firsthead=\box79
 \LT@foot=\box80
 \LT@lastfoot=\box81
 \LT@gbox=\box82
-\LT@cols=\count330
-\LT@rows=\count331
-\c@LT@tables=\count332
-\c@LT@chunks=\count333
+\LT@cols=\count327
+\LT@rows=\count328
+\c@LT@tables=\count329
+\c@LT@chunks=\count330
 \LT@p@ftn=\toks41
 )
 (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
@@ -1340,12 +1145,12 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \cmidrulesep=\dimen289
 \cmidrulekern=\dimen290
 \defaultaddspace=\dimen291
-\@cmidla=\count334
-\@cmidlb=\count335
+\@cmidla=\count331
+\@cmidlb=\count332
 \@aboverulesep=\dimen292
 \@belowrulesep=\dimen293
-\@thisruleclass=\count336
-\@lastruleclass=\count337
+\@thisruleclass=\count333
+\@lastruleclass=\count334
 \@thisrulewidth=\dimen294
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
@@ -1360,15 +1165,15 @@ Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count338
-\calc@Bcount=\count339
+\calc@Acount=\count335
+\calc@Bcount=\count336
 \calc@Adimen=\dimen297
 \calc@Bdimen=\dimen298
 \calc@Askip=\skip62
 \calc@Bskip=\skip63
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count340
+\calc@Ccount=\count337
 \calc@Cskip=\skip64
 )
 (/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
@@ -1377,8 +1182,8 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \enit@outerparindent=\dimen299
 \enit@toks=\toks43
 \enit@inbox=\box85
-\enit@count@id=\count341
-\enitdp@description=\count342
+\enit@count@id=\count338
+\enitdp@description=\count339
 )
 (/usr/share/texlive/texmf-dist/tex/generic/ulem/ulem.sty
 \UL@box=\box86
@@ -1386,7 +1191,7 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \UL@skip=\skip66
 \UL@hook=\toks44
 \UL@height=\dimen300
-\UL@pe=\count343
+\UL@pe=\count340
 \UL@pixel=\dimen301
 \ULC@box=\box88
 Requested font "lasy6" scaled 1000
@@ -1400,32 +1205,37 @@ Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 )
 \Wrappedcontinuationbox=\box89
 \Wrappedvisiblespacebox=\box90
-Package hyperref Info: Option `breaklinks' set `true' on input line 378.
-Package hyperref Info: Option `colorlinks' set `true' on input line 378.
+Package hyperref Info: Option `breaklinks' set `true' on input line 380.
+Package hyperref Info: Option `colorlinks' set `true' on input line 380.
 
 (./Julia-onramp.aux)
 \openout1 = `Julia-onramp.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 385.
-LaTeX Font Info:    ... okay on input line 385.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 385.
-LaTeX Font Info:    ... okay on input line 385.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 385.
-LaTeX Font Info:    ... okay on input line 385.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 385.
-LaTeX Font Info:    ... okay on input line 385.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 385.
-LaTeX Font Info:    ... okay on input line 385.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 385.
-LaTeX Font Info:    ... okay on input line 385.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 385.
-LaTeX Font Info:    ... okay on input line 385.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 385.
-LaTeX Font Info:    ... okay on input line 385.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 385.
-LaTeX Font Info:    ... okay on input line 385.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 385.
-LaTeX Font Info:    ... okay on input line 385.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 387.
+LaTeX Font Info:    ... okay on input line 387.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 387.
+LaTeX Font Info:    ... okay on input line 387.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 387.
+LaTeX Font Info:    ... okay on input line 387.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 387.
+LaTeX Font Info:    ... okay on input line 387.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 387.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 3
+87.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 387.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 387.
+LaTeX Font Info:    ... okay on input line 387.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 387.
+LaTeX Font Info:    ... okay on input line 387.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 387.
+LaTeX Font Info:    ... okay on input line 387.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 387.
+LaTeX Font Info:    ... okay on input line 387.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 387.
+LaTeX Font Info:    ... okay on input line 387.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
@@ -1470,230 +1280,68 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/LinLibertine(0)/m/n on input line 38
-5.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/LinLibertine(0)/m/it on input line 
-385.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/LinLibertine(0)/b/n on input line 3
-85.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/LinBiolinum(0)/m/n on input line 38
-5.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/LinBiolinum(0)/b/n on input line 3
-85.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/LinLibertine(5)/m/n on input line 3
-85.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/LinLibertine(5)/b/n on input line 3
-85.
-Requested font "[latinmodern-math.otf]/OT" at 10.94997pt
- -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
-Requested font "[latinmodern-math.otf]/OT" at 10.95003pt
- -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
-Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;" at 10.950
-03pt
- -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
 
-Package fontspec Info: Font family 'latinmodern-math.otf(0)' created for font
-(fontspec)             'latinmodern-math.otf' with options
-(fontspec)             [BoldItalicFont={},ItalicFont={},SmallCapsFont={},Script
-=Math,BoldFont={latinmodern-math.otf}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"[latinmodern-math.otf]/OT:script=math;language=dflt;
-"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->"[latinmodern-math.otf]/OT:script=math;language=dflt;
-"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
+(fontspec)             this).
 
-Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;" at 10.95p
-t
- -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
-
-Package fontspec Info: Font family 'latinmodern-math.otf(1)' created for font
-(fontspec)             'latinmodern-math.otf' with options
-(fontspec)             [BoldItalicFont={},ItalicFont={},SmallCapsFont={},Script
-=Math,SizeFeatures={{Size=9.3075-},{Size=6.57-9.3075,Font=latinmodern-math.otf,
-Style=MathScript},{Size=-6.57,Font=latinmodern-math.otf,Style=MathScriptScript}
-},BoldFont={latinmodern-math.otf}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <9.3075->"[latinmodern-math.otf]/OT:script=math;language
-=dflt;"<6.57-9.3075>"[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=
-0;"<-6.57>"[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->"[latinmodern-math.otf]/OT:script=math;language=dflt;
-"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
-
+\symlegacymaths=\mathgroup7
+LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 387.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 387.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 387.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 387.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 387.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 387.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 387.
+LaTeX Font Info:    Redeclaring math accent \check on input line 387.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 387.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 387.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 387.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 387.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 387.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 387.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 387.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 387.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 387.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 387.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 387.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 387.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 387.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 387.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 387.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 387.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 385.
+(Font)              `operators' in the math version `normal' on input line 387.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input
- line 385.
+(Font)                  OT1/cmr/m/n --> TU/Alegreya(0)/m/n on input line 387.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 385.
+(Font)              `operators' in the math version `bold' on input line 387.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on inpu
-t line 385.
+(Font)                  OT1/cmr/bx/n --> TU/Alegreya(0)/m/n on input line 387.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  TU/Alegreya(0)/m/n --> TU/Alegreya(0)/m/n on input line
+ 387.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> TU/Alegreya(0)/m/it on input line 387.
 
-Package fontspec Info: latinmodern-math scale = 1.0001.
-
-
-Package fontspec Info: latinmodern-math scale = 1.0001.
-
-
-Package fontspec Info: latinmodern-math scale = 1.0001.
-
-
-Package fontspec Info: latinmodern-math scale = 1.0001.
-
-
-Package fontspec Info: latinmodern-math scale = 1.0001.
-
-
-Package fontspec Info: Font family 'latinmodern-math.otf(2)' created for font
-(fontspec)             'latinmodern-math.otf' with options
-(fontspec)             [BoldItalicFont={},ItalicFont={},SmallCapsFont={},Script
-=Math,SizeFeatures={{Size=9.3075-},{Size=6.57-9.3075,Font=latinmodern-math.otf,
-Style=MathScript},{Size=-6.57,Font=latinmodern-math.otf,Style=MathScriptScript}
-},BoldFont={latinmodern-math.otf},ScaleAgain=1.0001,FontAdjustment={\fontdimen
-(fontspec)             8\font =7.41315pt\relax \fontdimen 9\font
-(fontspec)             =4.3143pt\relax \fontdimen 10\font =4.8618pt\relax
-(fontspec)             \fontdimen 11\font =7.5117pt\relax \fontdimen 12\font
-(fontspec)             =3.77776pt\relax \fontdimen 13\font =3.97485pt\relax
-(fontspec)             \fontdimen 14\font =3.97485pt\relax \fontdimen 15\font
-(fontspec)             =3.16455pt\relax \fontdimen 16\font =2.70465pt\relax
-(fontspec)             \fontdimen 17\font =2.70465pt\relax \fontdimen 18\font
-(fontspec)             =2.7375pt\relax \fontdimen 19\font =2.19pt\relax
-(fontspec)             \fontdimen 22\font =2.7375pt\relax \fontdimen 20\font
-(fontspec)             =0pt\relax \fontdimen 21\font =0pt\relax }].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <9.3075->s*[1.0001]"[latinmodern-math.otf]/OT:script=mat
-h;language=dflt;"<6.57-9.3075>s*[1.0001]"[latinmodern-math.otf]/OT:script=math;
-language=dflt;+ssty=0;"<-6.57>s*[1.0001]"[latinmodern-math.otf]/OT:script=math;
-language=dflt;+ssty=1;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-(fontspec)             and font adjustment code:
-(fontspec)             \fontdimen 8\font =7.41315pt\relax \fontdimen 9\font
-(fontspec)             =4.3143pt\relax \fontdimen 10\font =4.8618pt\relax
-(fontspec)             \fontdimen 11\font =7.5117pt\relax \fontdimen 12\font
-(fontspec)             =3.77776pt\relax \fontdimen 13\font =3.97485pt\relax
-(fontspec)             \fontdimen 14\font =3.97485pt\relax \fontdimen 15\font
-(fontspec)             =3.16455pt\relax \fontdimen 16\font =2.70465pt\relax
-(fontspec)             \fontdimen 17\font =2.70465pt\relax \fontdimen 18\font
-(fontspec)             =2.7375pt\relax \fontdimen 19\font =2.19pt\relax
-(fontspec)             \fontdimen 22\font =2.7375pt\relax \fontdimen 20\font
-(fontspec)             =0pt\relax \fontdimen 21\font =0pt\relax 
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[1.0001]"[latinmodern-math.otf]/OT:script=math;lang
-uage=dflt;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
-(fontspec)             and font adjustment code:
-(fontspec)             \fontdimen 8\font =7.41315pt\relax \fontdimen 9\font
-(fontspec)             =4.3143pt\relax \fontdimen 10\font =4.8618pt\relax
-(fontspec)             \fontdimen 11\font =7.5117pt\relax \fontdimen 12\font
-(fontspec)             =3.77776pt\relax \fontdimen 13\font =3.97485pt\relax
-(fontspec)             \fontdimen 14\font =3.97485pt\relax \fontdimen 15\font
-(fontspec)             =3.16455pt\relax \fontdimen 16\font =2.70465pt\relax
-(fontspec)             \fontdimen 17\font =2.70465pt\relax \fontdimen 18\font
-(fontspec)             =2.7375pt\relax \fontdimen 19\font =2.19pt\relax
-(fontspec)             \fontdimen 22\font =2.7375pt\relax \fontdimen 20\font
-(fontspec)             =0pt\relax \fontdimen 21\font =0pt\relax 
-
-LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 385.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/cmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on inpu
-t line 385.
-LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 385.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/cmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on inpu
-t line 385.
-
-Package fontspec Info: latinmodern-math scale = 0.9999.
-
-
-Package fontspec Info: latinmodern-math scale = 0.9999.
-
-
-Package fontspec Info: latinmodern-math scale = 0.9999.
-
-
-Package fontspec Info: latinmodern-math scale = 0.9999.
-
-
-Package fontspec Info: latinmodern-math scale = 0.9999.
-
-
-Package fontspec Info: Font family 'latinmodern-math.otf(3)' created for font
-(fontspec)             'latinmodern-math.otf' with options
-(fontspec)             [BoldItalicFont={},ItalicFont={},SmallCapsFont={},Script
-=Math,SizeFeatures={{Size=9.3075-},{Size=6.57-9.3075,Font=latinmodern-math.otf,
-Style=MathScript},{Size=-6.57,Font=latinmodern-math.otf,Style=MathScriptScript}
-},BoldFont={latinmodern-math.otf},ScaleAgain=0.9999,FontAdjustment={\fontdimen
-(fontspec)             8\font =0.438pt\relax \fontdimen 9\font =2.19pt\relax
-(fontspec)             \fontdimen 10\font =1.82864pt\relax \fontdimen 11\font
-(fontspec)             =1.21545pt\relax \fontdimen 12\font =6.56999pt\relax
-(fontspec)             \fontdimen 13\font =0pt\relax }].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <9.3075->s*[0.9999]"[latinmodern-math.otf]/OT:script=mat
-h;language=dflt;"<6.57-9.3075>s*[0.9999]"[latinmodern-math.otf]/OT:script=math;
-language=dflt;+ssty=0;"<-6.57>s*[0.9999]"[latinmodern-math.otf]/OT:script=math;
-language=dflt;+ssty=1;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-(fontspec)             and font adjustment code:
-(fontspec)             \fontdimen 8\font =0.438pt\relax \fontdimen 9\font
-(fontspec)             =2.19pt\relax \fontdimen 10\font =1.82864pt\relax
-(fontspec)             \fontdimen 11\font =1.21545pt\relax \fontdimen 12\font
-(fontspec)             =6.56999pt\relax \fontdimen 13\font =0pt\relax 
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[0.9999]"[latinmodern-math.otf]/OT:script=math;lang
-uage=dflt;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
-(fontspec)             and font adjustment code:
-(fontspec)             \fontdimen 8\font =0.438pt\relax \fontdimen 9\font
-(fontspec)             =2.19pt\relax \fontdimen 10\font =1.82864pt\relax
-(fontspec)             \fontdimen 11\font =1.21545pt\relax \fontdimen 12\font
-(fontspec)             =6.56999pt\relax \fontdimen 13\font =0pt\relax 
-
-LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 3
-85.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/cmex/m/n --> TU/latinmodern-math.otf(3)/m/n on inpu
-t line 385.
-LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 385
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> TU/Alegreya(0)/b/n on input line 387.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 387.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 387.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  TU/Alegreya(0)/m/n --> TU/Alegreya(0)/b/n on input line
+ 387.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> TU/Alegreya(0)/b/it on input line 387
 .
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/cmex/m/n --> TU/latinmodern-math.otf(3)/b/n on inpu
-t line 385.
-Package hyperref Info: Link coloring ON on input line 385.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 387.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 387.
+Package hyperref Info: Link coloring ON on input line 387.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -1703,73 +1351,59 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count344
+\c@section@level=\count341
 )
-LaTeX Info: Redefining \ref on input line 385.
-LaTeX Info: Redefining \pageref on input line 385.
-LaTeX Info: Redefining \nameref on input line 385.
+LaTeX Info: Redefining \ref on input line 387.
+LaTeX Info: Redefining \pageref on input line 387.
+LaTeX Info: Redefining \nameref on input line 387.
 
 (./Julia-onramp.out) (./Julia-onramp.out)
 \@outlinefile=\write5
 \openout5 = `Julia-onramp.out'.
 
-LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
-(Font)              scaled to size 17.28pt on input line 387.
-Requested font "[LinLibertine_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;m
-apping=tex-text;" at 17.28pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-R.otf
-LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 387.
-Requested font "[LinLibertine_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;m
-apping=tex-text;" at 12.0pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-R.otf
-Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;" at 12.0pt
- -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
-Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=0;" a
-t 8.0pt
- -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
-Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;" a
-t 6.0pt
- -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
+(Font)              scaled to size 17.28pt on input line 389.
+Requested font "[Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum
+;mapping=tex-text;" at 17.28pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/huerta/alegreya/Alegreya-Regul
+ar.otf
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
+(Font)              scaled to size 12.0pt on input line 389.
+Requested font "[Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum
+;mapping=tex-text;" at 12.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/huerta/alegreya/Alegreya-Regul
+ar.otf
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
+(Font)              scaled to size 8.0pt on input line 389.
+Requested font "[Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum
+;mapping=tex-text;" at 8.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/huerta/alegreya/Alegreya-Regul
+ar.otf
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
+(Font)              scaled to size 6.0pt on input line 389.
+Requested font "[Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum
+;mapping=tex-text;" at 6.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/huerta/alegreya/Alegreya-Regul
+ar.otf
 Requested font "cmmi12" at 12.0pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
 Requested font "cmmi8" at 8.0pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm
 Requested font "cmmi6" at 6.0pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 12.00128pt on input line 387.
-Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;" at 12.001
-28pt
- -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.00085pt on input line 387.
-Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=0;" a
-t 8.00085pt
- -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00064pt on input line 387.
-Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;" a
-t 6.00064pt
- -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 11.99872pt on input line 387.
-Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;" at 11.998
-72pt
- -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 387.
-Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=0;" a
-t 7.99915pt
- -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 387.
-Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;" a
-t 5.99936pt
- -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
-LaTeX Font Info:    Trying to load font information for U+msa on input line 387
+Requested font "cmsy10" at 12.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+Requested font "cmsy8" at 8.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm
+Requested font "cmsy6" at 6.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
+Requested font "cmex10" at 12.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+Requested font "cmex8" at 8.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm
+Requested font "cmex7" at 6.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+LaTeX Font Info:    Trying to load font information for U+msa on input line 389
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -1781,7 +1415,7 @@ Requested font "msam10" at 8.0pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 Requested font "msam7" at 6.0pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
-LaTeX Font Info:    Trying to load font information for U+msb on input line 387
+LaTeX Font Info:    Trying to load font information for U+msb on input line 389
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1794,7 +1428,7 @@ Requested font "msbm10" at 8.0pt
 Requested font "msbm7" at 6.0pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 38
-7.
+9.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -1805,722 +1439,176 @@ Requested font "rsfs10" at 8.0pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 Requested font "rsfs5" at 6.0pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm
-LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 394.
-Requested font "[LinLibertine_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;m
-apping=tex-text;" at 14.4pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-R.otf
-LaTeX Font Info:    Font shape `TU/LinLibertine(0)/b/n' will be
-(Font)              scaled to size 14.4pt on input line 394.
-Requested font "[LinLibertine_RB.otf]/OT:script=latn;language=dflt;+tnum;+lnum;
-mapping=tex-text;" at 14.4pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-RB.otf
-Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=0;" a
-t 7.665pt
- -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
-Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;" a
-t 5.475pt
- -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
+Requested font "cmr12" at 12.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
+Requested font "cmr8" at 8.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
+Requested font "cmr6" at 6.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
+(Font)              scaled to size 14.4pt on input line 396.
+Requested font "[Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum
+;mapping=tex-text;" at 14.4pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/huerta/alegreya/Alegreya-Regul
+ar.otf
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/b/n' will be
+(Font)              scaled to size 14.4pt on input line 396.
+Requested font "[Alegreya-Bold.otf]/OT:script=latn;language=dflt;+pnum;+lnum;ma
+pping=tex-text;" at 14.4pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/huerta/alegreya/Alegreya-Bold.
+otf
 Requested font "cmmi10" at 10.95pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
-Requested font "cmmi7" at 7.665pt
- -> /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi7.tfm
-Requested font "cmmi5" at 5.475pt
- -> /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi5.tfm
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.95116pt on input line 399.
-Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;" at 10.951
-16pt
- -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.6658pt on input line 399.
-Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=0;" a
-t 7.6658pt
- -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.47559pt on input line 399.
-Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;" a
-t 5.47559pt
- -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 10.94882pt on input line 399.
-Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;" at 10.948
-82pt
- -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.66417pt on input line 399.
-Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=0;" a
-t 7.66417pt
- -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.47441pt on input line 399.
-Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;" a
-t 5.47441pt
- -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
+Requested font "cmsy10" at 10.95pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+Requested font "cmex10" at 10.95pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 Requested font "msam10" at 10.95pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
-Requested font "msam7" at 7.665pt
- -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
-Requested font "msam5" at 5.475pt
- -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
 Requested font "msbm10" at 10.95pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
-Requested font "msbm7" at 7.665pt
- -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
-Requested font "msbm5" at 5.475pt
- -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
 Requested font "rsfs10" at 10.95pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
-
-
-LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <5.475> not available
-(Font)              size <5> substituted on input line 399.
-
-Requested font "rsfs5" at 5.0pt
- -> /usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm
-LaTeX Font Info:    Font shape `TU/LinLibertine(5)/m/n' will be
-(Font)              scaled to size 10.95pt on input line 399.
-Requested font "[LinLibertine_M.otf]/OT:script=latn;language=dflt;" at 10.95pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-M.otf
-LaTeX Font Info:    Font shape `TU/LinLibertine(5)/m/n' will be
-(Font)              scaled to size 7.665pt on input line 399.
-Requested font "[LinLibertine_M.otf]/OT:script=latn;language=dflt;" at 7.665pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-M.otf
-LaTeX Font Info:    Font shape `TU/LinLibertine(5)/m/n' will be
-(Font)              scaled to size 5.475pt on input line 399.
-Requested font "[LinLibertine_M.otf]/OT:script=latn;language=dflt;" at 5.475pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-M.otf
-LaTeX Font Info:    Font shape `TU/LinLibertine(0)/b/n' will be
-(Font)              scaled to size 10.95pt on input line 411.
-Requested font "[LinLibertine_RB.otf]/OT:script=latn;language=dflt;+tnum;+lnum;
-mapping=tex-text;" at 10.95pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-RB.otf
-LaTeX Font Info:    Font shape `TU/LinLibertine(5)/b/n' will be
-(Font)              scaled to size 10.95pt on input line 425.
-Requested font "[LinLibertine_MB.otf]/OT:script=latn;language=dflt;" at 10.95pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-MB.otf
-LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 449.
-Requested font "[LinLibertine_R.otf]/OT:script=latn;language=dflt;+tnum;+lnum;m
-apping=tex-text;" at 6.0pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-R.otf
-Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;" a
-t 5.0pt
- -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 449.
-Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;" a
-t 5.00053pt
- -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 449.
-Requested font "[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;" a
-t 4.99947pt
- -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
-LaTeX Font Info:    Font shape `TU/LinLibertine(5)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 449.
-Requested font "[LinLibertine_M.otf]/OT:script=latn;language=dflt;" at 6.0pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-M.otf
-LaTeX Font Info:    Font shape `TU/LinLibertine(5)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 449.
-Requested font "[LinLibertine_M.otf]/OT:script=latn;language=dflt;" at 5.0pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-M.otf
+Requested font "cmr10" at 10.95pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+Requested font "[lmmono10-regular]:" at 10.95pt
+ -> /usr/share/texmf/fonts/opentype/public/lm/lmmono10-regular.otf
+Requested font "[lmmono8-regular]:" at 8.0pt
+ -> /usr/share/texmf/fonts/opentype/public/lm/lmmono8-regular.otf
+Requested font "[lmmono8-regular]:" at 6.0pt
+ -> /usr/share/texmf/fonts/opentype/public/lm/lmmono8-regular.otf
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/b/n' will be
+(Font)              scaled to size 10.95pt on input line 413.
+Requested font "[Alegreya-Bold.otf]/OT:script=latn;language=dflt;+pnum;+lnum;ma
+pping=tex-text;" at 10.95pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/huerta/alegreya/Alegreya-Bold.
+otf
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 432.
+Requested font "[lmmonolt10-bold]:" at 10.95pt
+ -> /usr/share/texmf/fonts/opentype/public/lm/lmmonolt10-bold.otf
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
+(Font)              scaled to size 5.0pt on input line 456.
+Requested font "[Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum
+;mapping=tex-text;" at 5.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/huerta/alegreya/Alegreya-Regul
+ar.otf
+Requested font "cmex7" at 5.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+Requested font "[lmmono8-regular]:" at 5.0pt
+ -> /usr/share/texmf/fonts/opentype/public/lm/lmmono8-regular.otf
 Requested font "msam5" at 5.0pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
 Requested font "msbm5" at 5.0pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ⌃ (U+2303) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-[1
+Requested font "rsfs5" at 5.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm
+ [1
 
 ]
-Missing character: There is no ⌃ (U+2303) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/it' will be
-(Font)              scaled to size 10.95pt on input line 519.
-Requested font "[LinLibertine_RI.otf]/OT:script=latn;language=dflt;+tnum;+lnum;
+Missing character: There is no ⌃ (U+2303) in font [lmmono10-regular]:!
+Missing character: There is no ⌃ (U+2303) in font [lmmono10-regular]:!
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/it' will be
+(Font)              scaled to size 10.95pt on input line 526.
+Requested font "[Alegreya-Italic.otf]/OT:script=latn;language=dflt;+pnum;+lnum;
 mapping=tex-text;" at 10.95pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-RI.otf
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-[2]
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-[3]
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-LaTeX Font Info:    Font shape `TU/LinLibertine(5)/m/it' will be
-(Font)              scaled to size 10.95pt on input line 688.
-Requested font "[LinLibertine_MO.otf]/OT:script=latn;language=dflt;" at 10.95pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertine/LinLibertine_
-MO.otf
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-[4]
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/huerta/alegreya/Alegreya-Itali
+c.otf
+[2] [3]
+Requested font "[lmmono10-italic]:" at 10.95pt
+ -> /usr/share/texmf/fonts/opentype/public/lm/lmmono10-italic.otf
+ [4]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 801.
+(hyperref)                than one, level fixed on input line 808.
 
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
 [5]
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-
-Overfull \hbox (396.9007pt too wide) in paragraph at lines 893--893
-[]\TU/LinLibertine(5)/m/n/10.95 varinfo(m::Module=Main, pattern::Regex=r""; all
-::Bool = false, imported::Bool = false, sortby::Symbol = :name, minsize::Int = 
-0)[] 
+Overfull \hbox (266.08481pt too wide) in paragraph at lines 900--900
+[]\TU/lmtt/m/n/10.95 varinfo(m::Module=Main, pattern::Regex=r""; all::Bool = fa
+lse, imported::Bool = false, sortby::Symbol = :name, minsize::Int = 0)[] 
  []
 
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no π (U+03C0) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no α (U+03B1) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no β (U+03B2) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ≥ (U+2265) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ≤ (U+2264) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
+Missing character: There is no π (U+03C0) in font [lmmono10-regular]:!
+Missing character: There is no α (U+03B1) in font [lmmono10-regular]:!
+Missing character: There is no β (U+03B2) in font [lmmono10-regular]:!
+Missing character: There is no ≥ (U+2265) in font [lmmono10-regular]:!
+Missing character: There is no ≤ (U+2264) in font [lmmono10-regular]:!
+Missing character: There is no ∈ (U+2208) in font [lmmono10-regular]:!
 [6]
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ≤ (U+2264) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no π (U+03C0) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-[7]
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-[8]
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no π (U+03C0) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no π (U+03C0) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no π (U+03C0) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no π (U+03C0) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no π (U+03C0) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no π (U+03C0) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no π (U+03C0) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-[9]
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-[10]
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-[11]
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no π (U+03C0) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no π (U+03C0) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
+Missing character: There is no ∈ (U+2208) in font [Alegreya-Regular.otf]/OT:scr
+ipt=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ≤ (U+2264) in font [lmmono10-regular]:!
+Missing character: There is no π (U+03C0) in font [lmmono10-regular]:!
+[7] [8]
+Missing character: There is no π (U+03C0) in font [lmmono10-regular]:!
+Missing character: There is no π (U+03C0) in font [lmmono10-regular]:!
+Missing character: There is no π (U+03C0) in font [lmmono10-regular]:!
+Missing character: There is no π (U+03C0) in font [lmmono10-regular]:!
+Missing character: There is no π (U+03C0) in font [lmmono10-regular]:!
+Missing character: There is no π (U+03C0) in font [lmmono10-regular]:!
+Missing character: There is no π (U+03C0) in font [lmmono10-regular]:!
+[9] [10] [11]
+Missing character: There is no π (U+03C0) in font [lmmono10-regular]:!
+Missing character: There is no π (U+03C0) in font [lmmono10-regular]:!
 [12]
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
+Missing character: There is no ∘ (U+2218) in font [lmmono10-regular]:!
+Missing character: There is no ∘ (U+2218) in font [lmmono10-regular]:!
+Missing character: There is no ∘ (U+2218) in font [lmmono10-regular]:!
 [13]
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
 File: output_105_0.pdf Graphic file (type pdf)
 <use output_105_0.pdf>
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 1915--1916
+ [14]
+Underfull \hbox (badness 10000) in paragraph at lines 1922--1923
 
  []
 
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
 File: output_107_0.pdf Graphic file (type pdf)
 <use output_107_0.pdf>
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 1949--1950
+Underfull \hbox (badness 10000) in paragraph at lines 1956--1957
 
  []
 
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
 File: output_110_0.pdf Graphic file (type pdf)
 <use output_110_0.pdf>
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 1989--1990
+Underfull \hbox (badness 10000) in paragraph at lines 1996--1997
 
  []
 
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
 File: output_113_0.pdf Graphic file (type pdf)
 <use output_113_0.pdf>
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 2029--2030
+Underfull \hbox (badness 10000) in paragraph at lines 2036--2037
 
  []
 
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
 File: output_115_0.pdf Graphic file (type pdf)
 <use output_115_0.pdf>
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 2063--2064
+Underfull \hbox (badness 10000) in paragraph at lines 2070--2071
 
  []
 
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-[19]
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-[20]
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-[21]
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no π (U+03C0) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no π (U+03C0) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no π (U+03C0) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no π (U+03C0) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ≤ (U+2264) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-[22]
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-[23]
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-[24]
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-[25]
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no π (U+03C0) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
-Missing character: There is no ␣ (U+2423) in font [LinLibertine_M.otf]/OT:scrip
-t=latn;language=dflt;!
+[19] [20] [21]
+Missing character: There is no π (U+03C0) in font [lmmono10-regular]:!
+Missing character: There is no π (U+03C0) in font [lmmono10-regular]:!
+Missing character: There is no π (U+03C0) in font [lmmono10-regular]:!
+Missing character: There is no π (U+03C0) in font [lmmono10-regular]:!
+Missing character: There is no ≤ (U+2264) in font [lmmono10-regular]:!
+[22] [23] [24] [25]
+Missing character: There is no π (U+03C0) in font [lmmono10-regular]:!
 [26] (./Julia-onramp.aux)
-
-LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 0.475pt have occurred.
-
 Package rerunfilecheck Info: File `Julia-onramp.out' has not changed.
 (rerunfilecheck)             Checksum: 1F475432447C26D8164516BD1C9A2C8E;1632.
  ) 
 Here is how much of TeX's memory you used:
- 40176 strings out of 476191
- 813434 string characters out of 5812071
- 1160259 words of memory out of 5000000
- 60345 multiletter control sequences out of 15000+600000
- 477988 words of font info for 127 fonts, out of 8000000 for 9000
+ 27260 strings out of 476191
+ 555897 string characters out of 5812071
+ 913027 words of memory out of 5000000
+ 47496 multiletter control sequences out of 15000+600000
+ 477674 words of font info for 98 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 99i,9n,124p,531b,626s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,9n,112p,510b,630s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on Julia-onramp.pdf (26 pages).
