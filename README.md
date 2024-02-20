@@ -1,5 +1,7 @@
 # Julia for general-purpose applications
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://ominous-meme-wg75654w457fgj75.github.dev/)
+
 ![Julia](https://raw.githubusercontent.com/a-mhamdi/infodev/main/Codes/Julia.png)
 
 <!--
