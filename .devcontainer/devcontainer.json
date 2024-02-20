@@ -1,8 +1,10 @@
 {
 	"name": "Typst",
 	"image": "ghcr.io/typst/typst:latest",
-	// Configure tool-specific properties.
-	"customizations": {
+	"waitFor": "onCreateCommand",
+	"updateContentCommand": "apk add git",
+	"postCreateCommand": "",
+		"customizations": {
 		// Configure properties specific to VS Code.
 		"vscode": {
 			"extensions": [
@@ -10,6 +12,5 @@
 				"mathematic.vscode-pdf"
 			]
 		}
-	},
-	"postCreateCommand": "apk add git"
+	}
 }
