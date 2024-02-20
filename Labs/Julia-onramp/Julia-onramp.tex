@@ -3,7 +3,7 @@
 
     \usepackage[breakable]{tcolorbox}
     \usepackage{parskip} % Stop auto-indenting (to mimic markdown behaviour)
-    \usepackage{libertine}
+    %\usepackage{libertine}
 
     % Basic figure setup, for now with no caption control since it's done
     % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
@@ -32,19 +32,21 @@
     \usepackage{upquote} % Upright quotes for verbatim code
     \usepackage{eurosym} % defines \euro
 
-    \usepackage{iftex}
-    \ifPDFTeX
-        \usepackage[T1]{fontenc}
-        \IfFileExists{alphabeta.sty}{
-              \usepackage{alphabeta}
-          }{
-              \usepackage[mathletters]{ucs}
-              \usepackage[utf8x]{inputenc}
-          }
-    \else
-        \usepackage{fontspec}
-        \usepackage{unicode-math}
-    \fi
+%    \usepackage{iftex}
+%    \ifPDFTeX
+%        \usepackage[T1]{fontenc}
+%        \IfFileExists{alphabeta.sty}{
+%              \usepackage{alphabeta}
+%          }{
+%              \usepackage[mathletters]{ucs}
+%              \usepackage[utf8x]{inputenc}
+%          }
+%    \else
+%        \usepackage{fontspec}
+%        \usepackage{unicode-math}
+%    \fi
+
+\usepackage{Alegreya}
 
     \usepackage{fancyvrb} % verbatim replacement that allows latex
     \usepackage{grffile} % extends the file name processing of package graphics
@@ -411,10 +413,15 @@
     \textbf{Getting around}
 
     By default, Julia runs in an interactive terminal called the REPL. In
-this mode, Some useful commands are: 1. \texttt{\^{}C} aborts execution
-1. \texttt{\^{}D} exits Julia 1. \texttt{?} enters help mode 1.
-\texttt{;} enters system shell mode 1. \texttt{{]}} enters package
-manager mode 1. \texttt{\^{}l} clears screen
+this mode, Some useful commands are: 
+\begin{enumerate}
+	\item \texttt{\^{}C} aborts execution
+	\item \texttt{\^{}D} exits Julia
+	\item \texttt{?} enters help mode
+	\item \texttt{;} enters system shell mode
+	\item \texttt{{]}} enters package manager mode
+	\item \texttt{\^{}l} clears screen
+\end{enumerate}
 
     We begin first by activating the environement within the desired folder.
 
