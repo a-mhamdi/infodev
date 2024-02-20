@@ -1,5 +1,6 @@
 
 {
+	
 	"name": "Typst",
 	"image": "ghcr.io/typst/typst:latest",
 
@@ -15,7 +16,4 @@
 		}
 	},
 
-	"postCreateCommand": "/julia-devcontainer-scripts/postcreate.jl",
-
-	"remoteUser": "vscode"
 }
