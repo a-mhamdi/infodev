@@ -4,8 +4,7 @@
 	"waitFor": "onCreateCommand",
 	"updateContentCommand": "apk add git",
 	"postCreateCommand": "",
-		"customizations": {
-		// Configure properties specific to VS Code.
+	"customizations": {
 		"vscode": {
 			"extensions": [
 				"nvarner.typst-lsp",

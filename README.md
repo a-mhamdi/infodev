@@ -4,10 +4,6 @@
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&skip_quickstart=true&machine=standardLinux32gb&repo=720724444&devcontainer_path=.devcontainer%2Fdevcontainer.json&geo=EuropeWest)
 
-<!--
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&skip_quickstart=true&machine=standardLinux32gb&repo=537615866&devcontainer_path=.devcontainer%2Fdevcontainer.json&geo=EuropeWest) 
--->
-
 [![Docker Image CI](https://github.com/a-mhamdi/infodev/actions/workflows/docker-image.yml/badge.svg)](https://github.com/a-mhamdi/infodev/actions/workflows/docker-image.yml)
 [![Docker Version](https://img.shields.io/docker/v/abmhamdi/infodev?sort=semver)](https://hub.docker.com/r/abmhamdi/infodev)
 
