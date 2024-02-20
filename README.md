@@ -1,6 +1,6 @@
 # Julia for general-purpose applications
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://ominous-meme-wg75654w457fgj75.github.dev/)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)]([https://ominous-meme-wg75654w457fgj75.github.dev/](https://github.com/codespaces/new?hide_repo_select=true&ref=main&skip_quickstart=true&machine=standardLinux32gb&repo=537615866&devcontainer_path=.devcontainer%2Fdevcontainer.json&geo=EuropeWest))
 
 ![Julia](https://raw.githubusercontent.com/a-mhamdi/infodev/main/Codes/Julia.png)
 
