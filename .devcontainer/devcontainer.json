@@ -10,8 +10,8 @@
 		"vscode": {
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
-				"yzhang.markdown-all-in-one",
-				"nvarner.typst-lsp"
+				"nvarner.typst-lsp",
+				"mathematic.vscode-pdf"
 			]
 		}
 	},
