@@ -1,10 +1,10 @@
-FROM julia:1.10.0
+FROM dorowu/ubuntu-desktop-lxde-vnc
 LABEL author="A. Mhamdi <a_mhamdi@outlook.com>"
 
-RUN apt-get update && apt-get install -y libgl1-mesa-dev
+RUN apt-get update && apt-get install -y julia
 
 # Expose ports
-EXPOSE 1234 2468 8000 9384
+EXPOSE 1234 2468 5901 8000 9384
 
 # Set ENV variables
 ENV USERNAME mhamdi 
@@ -26,8 +26,7 @@ WORKDIR ${WORKING_DIR}
 COPY ./Codes/Project.toml ./
 
 # Activate environment and add IJulia kernel, Pluto and JupyterLab IDE
-RUN julia -e 'import Pkg; Pkg.activate("."); Pkg.instantiate(); Pkg.precompile()'
-RUN julia -e 'import Pkg; Pkg.add(["Conda", "IJulia", "Pluto"]); Pkg.precompile()'
+RUN julia -e 'import Pkg; Pkg.activate("."); Pkg.instantiate();'
 RUN julia -e 'import Conda; Conda.add("JupyterLab")'
 
 # Default command
