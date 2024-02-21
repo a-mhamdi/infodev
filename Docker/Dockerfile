@@ -1,7 +1,7 @@
 FROM dorowu/ubuntu-desktop-lxde-vnc
 LABEL author="A. Mhamdi <a_mhamdi@outlook.com>"
 
-RUN apt-get update
+RUN apt update
 RUN curl -fsSL https://install.julialang.org | sh
 
 # Expose ports
