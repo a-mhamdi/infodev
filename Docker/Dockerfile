@@ -1,7 +1,7 @@
 FROM dorowu/ubuntu-desktop-lxde-vnc
 LABEL author="A. Mhamdi <a_mhamdi@outlook.com>"
 
-RUN curl -fsSL https://install.julialang.org | sh
+RUN curl -fsSL https://install.julialang.org | sh -y
 
 # Expose ports
 EXPOSE 1234 2468 5901 8000 9384
