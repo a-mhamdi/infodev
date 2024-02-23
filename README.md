@@ -18,10 +18,14 @@ Codes run on top of a `Docker` image, ensuring a consistent and reproducible env
 To run the code, you will need to first pull the `Docker` image by running the following command:
 
 ```zsh
-docker pull abmhamdi/infodev
+docker pull abmhamdi/infodev:isetbz
 ```
 
-This may take a while, as it will download and install all necessary dependencies.
+This may take a while, as it will download and install all necessary dependencies. The basic way to start a container is:
+
+```zsh
+docker run -p 6080:80 -v /dev/shm:/dev/shm abmhamdi/infodev:isetbz
+```
 
 ## How to control the containers:
 

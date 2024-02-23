@@ -5,13 +5,13 @@ services:
    image: abmhamdi/infodev
    ports:
    - "2468:2468"
-   - "8080:8000"
+   - "6081:8000"
    - "8642:9384"
    command: /home/mhamdi/.julia/conda/3/x86_64/bin/jupyter lab --NotebookApp.token='' --ip 0.0.0.0 --port 2468 --allow-root --no-browser
  pluto:
    image: abmhamdi/infodev
    ports:
    - "1234:1234"
-   - "8090:8000"
+   - "6082:8000"
    - "4321:9384"
    command: julia -e "import Pluto; Pluto.run(host=\"0.0.0.0\", port=1234, launch_browser=false, require_secret_for_open_links=false, require_secret_for_access=false)"
