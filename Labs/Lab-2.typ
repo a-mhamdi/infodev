@@ -30,12 +30,6 @@
       organization: [ISET Bizerte --- Tunisia],
       profile: "abc",
     ),
-    (
-      name: "Student 3",
-      department: [Dept. of EE],
-      organization: [ISET Bizerte --- Tunisia],
-      profile: "abc",
-    )
   */
 
   )
