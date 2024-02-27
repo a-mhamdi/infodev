@@ -50,9 +50,6 @@ The following exercises will help you practice various aspects of Julia, such as
 
 #exo[Fibonacci Sequence][Write a function that generates the Fibonacci sequence#footnote[The Fibonacci sequence starts with $0$ and $1$, and each subsequent number is the sum of the two preceding numbers.] up to a given number $n$.]
 
-// The function should return an array of the Fibonacci sequence. For example, if $n = 10$, the function should return $[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]$.
-
-
 $F_(0) = 0 \ F_(1) = 1 \  F_(n) = F_(n-1)+F_(n-2) quad forall n >= 2$
 
 ```julia
