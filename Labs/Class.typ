@@ -73,7 +73,7 @@
    kind: table
   ): set figure.caption(position: top)
 
-  // RAW TEME
+  // RAW THEME
   set raw(theme: "Themes/Dracula.tmTheme")
   show raw: it => block(
  	fill: rgb("#1d2433"),

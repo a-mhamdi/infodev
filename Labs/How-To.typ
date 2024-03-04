@@ -45,6 +45,16 @@ Typst supports Markdown syntax, which provides a range of formatting options @Ma
 	-	Surround a text with single asterisks '(\*)' to make it bold
 	-	Use single underscores '(\_)' around your text to emphasize it
 	-	To create headings, use equal signs '(=)' followed by a space at the begining of a line. The number of '(=)' symbols determines the heading level.
++	Creating lists:
+	-	Unordered list: use a hyphen '(-)' followed by a space for each list item
+	-	Ordered list: use a plus sign '(+)' followed by a space for each list item
++	Code snippets:
+	-	Inline code: enclose the code within backticks (\`)
+	-	Block of code: use triple backticks followed by the word 'julia' to enable syntax highlighting
+	#raw("```julia
+using Pkg
+Pkg.update()
+```")
 +	Inserting Objects:
 	-	Use this syntax if you need to insert an image:
 	```typ
@@ -68,17 +78,6 @@ Typst supports Markdown syntax, which provides a range of formatting options @Ma
 
 	@tab:LABEL displays some results.
 	```
-
-+	Creating lists:
-	-	Unordered list: use a hyphen '(-)' followed by a space for each list item
-	-	Ordered list: use a plus sign '(+)' followed by a space for each list item
-+	Code snippets:
-	-	Inline code: enclose the code within backticks (\`)
-	-	Block of code: use triple backticks followed by the word 'julia' to enable syntax highlighting
-	#raw("```julia
-using Pkg
-Pkg.update()
-```")
 
 #reminder
 
