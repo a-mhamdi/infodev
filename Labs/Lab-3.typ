@@ -1,6 +1,5 @@
+#set heading(numbering: "1.")
 #import "Class.typ": *
-
-
 #show: ieee.with(
   title: [#text(smallcaps("Lab #3: Web Application with Genie"))],
   /*
@@ -9,75 +8,69 @@
   ],
   */
   authors:
-  (
+  ( 
     (
-      name: "Abdelbacet Mhamdi",
-      department: [Senior-lecturer, Dept. of EE],
-      organization: [ISET Bizerte --- Tunisia],
-      profile: "a-mhamdi",
-    ),
-
-    /*
-    (
-      name: "Student 1",
+      name: "Amdouni Aziz",
       department: [Dept. of EE],
       organization: [ISET Bizerte --- Tunisia],
-      profile: "abc",
+      profile: "Amdouni Aziz",
+      email: "azizamdouni007@gmail.com",
     ),
-    (
-      name: "Student 2",
-      department: [Dept. of EE],
-      organization: [ISET Bizerte --- Tunisia],
-      profile: "abc",
-    ),
-    (
-      name: "Student 3",
-      department: [Dept. of EE],
-      organization: [ISET Bizerte --- Tunisia],
-      profile: "abc",
-    )
-  */
-
-  )
-  // index-terms: (""),
+     )
+ // index-terms: (""),
   // bibliography-file: "Biblio.bib",
 )
 
-= Exercise
-In this lab, you will create a basic web application using *Genie* framework in Julia. The application will allow us to control the behaviour of a sine wave, given some adjustble parameters. You are required to carry out this lab using the REPL as in @fig:repl.
-
-#figure(
-	image("Images/REPL.png", width: 100%, fit: "contain"),
-	caption: "Julia REPL"
-	) <fig:repl>
-
-#exo[Sine Wave Control][We provide the Julia and HTML codes to build and run a web app that allows us to control the amplitude and frequency of a sine wave. *Plotly* is used to plot the corresponding graph. We also added a slider to change the number of samples used to draw the figure. The latter setting permits to grasp the influence of sampling frequency on the look of our chart.]
-
-#let code=read("../Codes/web-app/app.jl")
+= Introduction
+In this report, I will explain what i had done to add to the previous basic web application two extra sliders to change the phase and the offset which also modify the behaviour of the sine wave graph.
+= Sine Wave Control
+== Julia coding
+To the previous app.jl file , i had add two inputs *phase* and *offset*. There types are Float64 and Float32 and default values are 0. Also,i had added their names after  *onchange* so we can control them as we wish.
+This work is shown in code below : 
+#let code=read("app.jl")
 #raw(code, lang: "julia")
+== HTML coding
+For app.jl.html file, i had add two sliders :
 
-
-#let code=read("../Codes/web-app/app.jl.html")
+=== The phase 
+- Firstly , i had linked the slider's value to a variable named *ph*.
+- Secondly , i had set the minimum value of the slider to $-pi$.
+- Thridly , i had set the maximum value of the slider to $pi$.
+- Fourthly , i had set the step increment of the slider to $pi/100$.
+- In the end ,we specified that labels should be displayed on the slider.
+=== The offset
+- Firstly , i had linked the slider's value to a variable named *off*.
+- Secondly , i had set the minimum value of the slider to $-0.5$.
+- Thridly , i had set the maximum value of the slider to $1$.
+- Fourthly , i had set the step increment of the slider to $0.1$.
+- In the end ,i specified that labels should be displayed on the slider.
+This is shown in the html code below :
+#let code=read("app.jl.html")
 #raw(code, lang: "html")
-
-```zsh
-julia --project
-```
-
+== Graphical interface
+After checking the app.jl and app.jl.html codes ,
+i had opened the terminal of vs code and opened julia 
+and taped the commands below to use the GenieFramework to develop a web application.
 ```julia
 julia> using GenieFramework
-julia> Genie.loadapp() # Load app
-julia> up() # Start server
+julia> cd
+julia> Genie.loadapp()
+julia> up() 
 ```
+`using GenieFramework`This line imports the GenieFramework module into the Julia environment, allowing you to access the functionality provided by the Genie web framework.
+`cd(`This choose the current working directory in Julia to the specified path where your web application is located.
+`Genie.loadapp()`This command loads the web application defined in the current directory into the Genie framework. It sets up the necessary configurations and initializes the application.
+`up()`This command starts the web server, allowing our web application to be accessible through a web browser. Once the server is up and running,we can navigate to the specified URL to interact with our web application and control any parameters .
 
-We can now open the browser and navigate to the link #highlight[#link("localhost:8000")[localhost:8000]]. We will get the graphical interface as in @fig:genie-webapp.
+We can now open the browser and navigate to the link #highlight[#link("http://127.0.0.1:8000")[http://127.0.0.1:8000]]. We will get the updated graphical interface where we can control now plus the amplitude and frequency of the sine wave the phase and the offset as in @fig:genie-updated.
 
 #figure(
-	image("Images/Genie-sinewave.png", width: 100%),
-	caption: "Genie -> Sine Wave",
+	image("Genie-sinewave.png", width: 100%, fit: "cover"),
+	caption: "Genie -> Old Sine Wave",
 ) <fig:genie-webapp>
 
-#test[You are asked to add two extra sliders that modify the behaviour of the sine wave graph:
-	+ _Phase_ ranging between $-pi$ and $pi$, changes by a step of $pi/100$
-	+ _Offset_ varies from $-0.5$ to $1$, by a step of $0.1$.]
+#figure(
+	image("Update sine wave.png", width: 100%),
+	caption: "Genie -> Updated Sine wave",
+) <fig:genie-updated>
 
