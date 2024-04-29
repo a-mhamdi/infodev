@@ -18,6 +18,20 @@
 		:step=".5" :label="true"> 
 	</q-slider> 
     </div>
+  <div class="st-col col-12 col-sm st-module">
+        <p><b>phase</b></p>
+        <q-slider v-model="amp" 
+		:min="-3.14" :max="3.14" 
+		:step="3.14/100" :label="true"> 
+	</q-slider> 
+    </div>
+	<div class="st-col col-12 col-sm st-module">
+        <p><b>offset</b></p>
+        <q-slider v-model="amp" 
+		:min="0" :max="5" 
+		:step="0.5" :label="true"> 
+	</q-slider> 
+    </div>
 
     <div class="st-col col-12 col-sm st-module">
         <p><b>Frequency</b></p>
