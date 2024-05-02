@@ -87,7 +87,7 @@ rqt_graph
 @fig:pub-sub depicts the publication and reception of the message _"Hello, ROS2 from Julia!"_ in a terminal. The left part of the terminal showcases the message being published, while the right part demonstrates how the message is being received and heard.
 
 #figure(
-	image("Images/pub-sub_.png", width: 100%),
+	image("Images/pub-sub.png", width: 100%),
 	caption: "Minimal publisher/subscriber in ROS2",
 ) <fig:pub-sub>
 
