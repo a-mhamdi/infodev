@@ -93,7 +93,7 @@ B = [5 6; 7 8]
 # WRITE YOUR CODE HERE
 ```
 
-#test[Redirect the output of 'man ls' command to a dummy file and display the word count for 'ls'
+#test[Redirect the output of 'man ls' command to a dummy file and display the word count for 'ls' 
 ```bash
 man ls > dummy
 ```

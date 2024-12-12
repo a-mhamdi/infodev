@@ -33,7 +33,7 @@
   set document(title: title, author: authors.map(author => author.name))
 
   // Set the body font.
-  set text(font: "Delicious", size: 10pt)
+  set text(font: "TeX Gyre Pagella", size: 10pt)
 
   // Configure the page.
   set page(
@@ -89,7 +89,7 @@
   set page(footer: [
   *ISET Bizerte*
   #h(1fr)
-  #counter(page).display(
+  #context counter(page).display(
     "— 1/1 —",
     both: true,
   )
@@ -97,9 +97,9 @@
 
   // Configure headings.
   set heading(numbering: "I.A.1.")
-  show heading: it => locate(loc => {
+  show heading: it => context {
     // Find out the final number of the heading counter.
-    let levels = counter(heading).at(loc)
+    let levels = counter(heading).at(here())
     let deepest = if levels != () {
       levels.last()
     } else {
@@ -140,7 +140,7 @@
       }
       _#(it.body):_
     ]
-  })
+  }
 
   // Display the paper's title.
   //set page(columns: 1)
@@ -189,8 +189,7 @@
   
 
   
-  set par(justify: true)
-  show par: set block(spacing: 0.65em)
+  set par(justify: true, spacing: 0.65em)
 
   // Display abstract and index terms.
   if abstract != none [
@@ -220,7 +219,7 @@
 #let c = counter("exo")
 #let exo(tlt, txt) = block[
   #c.step()
-  #rect(fill: red, radius: 5pt)[*Exo #c.display(): #tlt *] 
+  #rect(fill: red, radius: 5pt)[*Task #context c.display(): #tlt *] 
   #rect(fill: luma(221))[#txt]
 ]
 
